@@ -1,0 +1,47 @@
+@use 'abstracts/variables' as v;
+@use 'abstracts/mixins' as m;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  overflow-anchor: none;
+  scroll-behavior: smooth;
+  @include m.tablet {
+    font-size: 106.25%;
+  }
+
+  @include m.desktop {
+    font-size: 112.5%;
+  }
+}
+
+body {
+  font-family: v.$font-body;
+  font-weight: 400;
+  line-height: 1.5;
+  color: v.$color-text-dark;
+  background-color: v.$color-bg;
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: v.$font-display;
+}
+
+a {
+  text-decoration: none;
+}

@@ -1,0 +1,42 @@
+/**************************/
+/* BREAKPOINTS */
+/**************************/
+$mobile: 36em; // 576px — крупные смартфоны и выше
+$tablet: 48em; // 768px — планшеты
+$laptop: 64em; // 1024px - ноубуки
+$desktop: 80em; // 1280px — десктоп
+
+/**************************/
+/* COLORS */
+/**************************/
+$color-bg: #fcfbfb;
+$color-primary: #c35367;
+
+$color-text-dark: #483832;
+$color-text-secondary: #5a5255;
+$color-border: #dfdadb;
+
+$color-white: #fff;
+$color-black: #000;
+$color-accent: #a83d4d;
+$color-footer-bg: #3d1f26;
+$color-cream: #f5ebdd;
+$color-accent-bg: rgba(195, 83, 103, 0.1);
+
+/**************************/
+/* FONT_FAMILY */
+/**************************/
+$font-display: 'Playfair Display', serif;
+$font-body: 'Inter', sans-serif;
+
+/**************************/
+/* TRANSITIONS */
+/**************************/
+$transition-color: color 0.2s ease;
+
+/**************************/
+/* FUNCTIONS */
+/**************************/
+@function rem($px) {
+  @return $px / 16 + rem;
+}
