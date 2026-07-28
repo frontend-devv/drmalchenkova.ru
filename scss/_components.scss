@@ -1,68 +1,126 @@
 @use 'abstracts/variables' as v;
 @use 'abstracts/mixins' as m;
 
-.mobile-menu {
-  position: fixed;
-  top: v.rem(80);
-  left: 0;
-  width: 100%;
-  min-height: calc(100vh - v.rem(80));
-  background-color: v.$color-bg;
-  border-bottom: 1px solid v.$color-border;
-  padding: v.rem(24) v.rem(22);
-  z-index: 99;
+// .mobile-menu {
+//   position: fixed;
+//   top: v.rem(80);
+//   left: 0;
+//   width: 100%;
+//   min-height: calc(100vh - v.rem(80));
+//   background-color: v.$color-bg;
+//   border-bottom: 1px solid v.$color-border;
+//   padding: v.rem(24) v.rem(22);
+//   z-index: 99;
 
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-10px);
-  transition:
-    opacity 0.3s,
-    transform 0.3s,
-    visibility 0.3s;
+//   opacity: 0;
+//   visibility: hidden;
+//   transform: translateY(-10px);
+//   transition:
+//     opacity 0.3s,
+//     transform 0.3s,
+//     visibility 0.3s;
 
-  @include m.tablet {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
+//   @include m.tablet {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+//   }
 
-  &.is-open {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-  }
+//   &.is-open {
+//     opacity: 1;
+//     visibility: visible;
+//     transform: translateY(0);
+//   }
 
-  &__list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: v.rem(4);
+//   &__list {
+//     list-style: none;
+//     margin: 0;
+//     padding: 0;
+//     display: flex;
+//     flex-direction: column;
+//     gap: v.rem(4);
 
-    @include m.tablet {
-      max-width: v.rem(420);
-      width: v.rem(260);
-    }
-  }
+//     @include m.tablet {
+//       max-width: v.rem(420);
+//       width: v.rem(260);
+//     }
+//   }
 
-  &__link {
-    display: block;
-    padding: v.rem(12) 0;
-    font-size: v.rem(18);
-    color: v.$color-text-dark;
-    border-bottom: 1px solid v.$color-border;
+//   &__link {
+//     display: block;
+//     padding: v.rem(12) 0;
+//     font-size: v.rem(18);
+//     color: v.$color-text-dark;
+//     border-bottom: 1px solid v.$color-border;
 
-    &:hover {
-      color: v.$color-primary;
-    }
-  }
+//     &:hover {
+//       color: v.$color-primary;
+//     }
+//   }
 
-  &.is-active {
-    color: v.$color-primary;
-    font-weight: 600;
-  }
-}
+//   &.is-active {
+//     color: v.$color-primary;
+//     font-weight: 600;
+//   }
+// }
+
+// .mobile-menu {
+//   position: fixed;
+//   top: v.rem(80);
+//   left: 0;
+//   width: 100%;
+//   min-height: calc(100vh - v.rem(80));
+//   background-color: v.$color-bg;
+//   border-bottom: 1px solid v.$color-border;
+//   padding: v.rem(24) v.rem(22);
+//   z-index: 99;
+
+//   opacity: 0;
+//   visibility: hidden;
+//   transform: translateY(-10px);
+//   transition:
+//     opacity 0.3s,
+//     transform 0.3s,
+//     visibility 0.3s;
+
+//   &.is-open {
+//     opacity: 1;
+//     visibility: visible;
+//     transform: translateY(0);
+//   }
+
+//   @include m.tablet {
+//     width: 100%;
+//     display: flex;
+//     flex-direction: column;
+//     align-items: flex-start;
+//   }
+
+//   &__list {
+//     list-style: none;
+//     margin: 0;
+//     padding: 0;
+//     display: flex;
+//     flex-direction: column;
+//     gap: v.rem(4);
+
+//     @include m.tablet {
+//       width: v.rem(260);
+//     }
+//   }
+
+//   &__link {
+//     display: block;
+//     padding: v.rem(12) 0;
+//     font-size: v.rem(18);
+//     color: v.$color-text-dark;
+//     border-bottom: 1px solid v.$color-border;
+
+//     &:hover {
+//       color: v.$color-primary;
+//     }
+//   }
+// }
 
 .mobile-menu {
   position: fixed;
@@ -118,6 +176,11 @@
 
     &:hover {
       color: v.$color-primary;
+    }
+
+    &.is-active {
+      color: v.$color-primary;
+      font-weight: 600;
     }
   }
 }
