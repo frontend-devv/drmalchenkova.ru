@@ -234,10 +234,15 @@ document.addEventListener('DOMContentLoaded', () => {
   syncMobileMenuPosition()
   window.addEventListener('resize', syncMobileMenuPosition)
 
-  // ✅ НОВОЕ — стабилизация высоты фото в hero (фикс для in-app браузеров: Telegram, Instagram и т.д.)
   function setHeroImageHeight() {
     const heroImage = document.querySelector('.hero__image')
     if (!heroImage) return
+
+    // ✅ применяем только на мобильном (совпадает с брейкпоинтом m.tablet, обычно 768px)
+    if (window.innerWidth >= 768) {
+      heroImage.style.maxHeight = '' // убираем инлайн-стиль, если он остался с мобильного ресайза
+      return
+    }
 
     const viewportHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight
     heroImage.style.maxHeight = `${viewportHeight * 0.6}px`
@@ -249,6 +254,13 @@ document.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('orientationchange', () => {
     clearTimeout(orientationTimeout)
     orientationTimeout = setTimeout(setHeroImageHeight, 200)
+  })
+
+  // ✅ добавьте также пересчёт при обычном resize (переход между брейкпоинтами)
+  let heroResizeTimeout
+  window.addEventListener('resize', () => {
+    clearTimeout(heroResizeTimeout)
+    heroResizeTimeout = setTimeout(setHeroImageHeight, 150)
   })
 
   // === Карусель дипломов (About) ===
