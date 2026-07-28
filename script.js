@@ -238,9 +238,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroImage = document.querySelector('.hero__image')
     if (!heroImage) return
 
-    // ✅ применяем только на мобильном (совпадает с брейкпоинтом m.tablet, обычно 768px)
     if (window.innerWidth >= 768) {
-      heroImage.style.maxHeight = '' // убираем инлайн-стиль, если он остался с мобильного ресайза
+      heroImage.style.maxHeight = ''
       return
     }
 
@@ -250,17 +249,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
   setHeroImageHeight()
 
+  let lastWidth = window.innerWidth
+
+  function handlePossibleResize() {
+    if (window.innerWidth !== lastWidth) {
+      lastWidth = window.innerWidth
+      setHeroImageHeight()
+    }
+  }
+
+  let heroResizeTimeout
+  window.addEventListener('resize', () => {
+    clearTimeout(heroResizeTimeout)
+    heroResizeTimeout = setTimeout(handlePossibleResize, 150)
+  })
+
   let orientationTimeout
   window.addEventListener('orientationchange', () => {
     clearTimeout(orientationTimeout)
     orientationTimeout = setTimeout(setHeroImageHeight, 200)
-  })
-
-  // ✅ добавьте также пересчёт при обычном resize (переход между брейкпоинтами)
-  let heroResizeTimeout
-  window.addEventListener('resize', () => {
-    clearTimeout(heroResizeTimeout)
-    heroResizeTimeout = setTimeout(setHeroImageHeight, 150)
   })
 
   // === Карусель дипломов (About) ===
