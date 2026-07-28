@@ -866,6 +866,7 @@
 .symptoms {
   padding: v.rem(20) v.rem(16);
   background-color: v.$color-bg;
+  scroll-margin-top: v.rem(80);
 
   @include m.tablet {
     padding: v.rem(30) v.rem(32);
@@ -1006,7 +1007,6 @@
 
   @include m.tablet {
     padding: v.rem(30) v.rem(32);
-    scroll-margin-top: v.rem(70);
   }
 
   @include m.desktop {
@@ -1016,6 +1016,15 @@
   &__container {
     max-width: v.rem(1200);
     margin: 0 auto;
+  }
+
+  &__label {
+    display: block;
+    font-size: v.rem(14);
+    font-weight: 600;
+    color: v.$color-primary;
+    letter-spacing: 0.05em;
+    margin-bottom: v.rem(8);
   }
 
   &__title {
@@ -1037,64 +1046,97 @@
   &__intro {
     font-size: v.rem(16);
     color: v.$color-text-secondary;
-    margin-bottom: v.rem(32);
+    margin-bottom: v.rem(16);
 
     @include m.desktop {
+      margin-bottom: v.rem(24);
+    }
+  }
+
+  &__subtitle {
+    display: flex;
+    align-items: baseline;
+    gap: v.rem(10);
+    font-size: v.rem(18);
+    font-weight: 600;
+    color: v.$color-text-dark;
+    line-height: 1.4;
+    margin-bottom: v.rem(20);
+
+    @include m.desktop {
+      font-size: v.rem(20);
+    }
+
+    &--second {
+      margin-top: v.rem(8);
+      margin-bottom: 0;
+    }
+  }
+
+  &__subtitle-num {
+    flex-shrink: 0;
+    color: v.$color-primary;
+    font-family: v.$font-display;
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0 0 v.rem(32);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: v.rem(12);
+
+    @include m.tablet {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: v.rem(16);
+      margin-bottom: v.rem(40);
+    }
+
+    @include m.desktop {
+      gap: v.rem(20);
       margin-bottom: v.rem(48);
     }
   }
 
-  &__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: v.rem(16);
-
-    @include m.tablet {
-      grid-template-columns: repeat(2, 1fr);
-      gap: v.rem(20);
-    }
-
-    @include m.desktop {
-      gap: v.rem(24);
-    }
-  }
-
-  &__card {
+  &__item {
     position: relative;
-    padding: v.rem(24) v.rem(20);
-    background-color: v.$color-white;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: v.rem(16);
+    background-color: #fff;
     border: 1px solid v.$color-border;
-    border-radius: v.rem(16);
+    border-radius: v.rem(12);
     transition:
       border-color 0.2s,
-      transform 0.2s,
-      box-shadow 0.2s;
+      transform 0.2s;
 
     @include m.desktop {
-      padding: v.rem(32) v.rem(28);
+      padding: v.rem(20) v.rem(24);
 
       &:hover {
         border-color: v.$color-primary;
-        transform: translateY(-4px);
-        box-shadow: 0 v.rem(12) v.rem(24) rgba(v.$color-primary, 0.1);
+        transform: translateY(-2px);
       }
     }
   }
 
   &__number {
     position: absolute;
-    top: v.rem(20);
-    right: v.rem(20);
+    top: v.rem(16);
+    right: v.rem(16);
     font-family: v.$font-display;
-    font-size: v.rem(28);
+    font-size: v.rem(24);
     font-weight: 700;
     color: v.$color-border;
     line-height: 1;
 
     @include m.desktop {
-      font-size: v.rem(32);
-      top: v.rem(24);
-      right: v.rem(24);
+      font-size: v.rem(28);
+      top: v.rem(20);
+      right: v.rem(20);
     }
   }
 
@@ -1102,7 +1144,7 @@
     width: v.rem(44);
     height: v.rem(44);
     border-radius: 50%;
-    background-color: rgba(v.$color-primary, 0.1);
+    background-color: rgba(195, 83, 103, 0.1);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1116,15 +1158,15 @@
   }
 
   &__card-title {
-    font-size: v.rem(17);
+    font-size: v.rem(16);
     font-weight: 600;
     color: v.$color-text-dark;
     margin-bottom: v.rem(10);
-    padding-right: v.rem(40);
-    line-height: 1.3;
+    padding-right: v.rem(32);
+    line-height: 1.35;
 
     @include m.desktop {
-      font-size: v.rem(18);
+      font-size: v.rem(17);
     }
   }
 
@@ -1148,10 +1190,10 @@
     @include m.tablet {
       width: auto;
       display: inline-flex;
+      margin-top: v.rem(32);
     }
   }
 }
-
 .appointment {
   padding: v.rem(20) v.rem(16);
   background-color: v.$color-bg;
@@ -1190,10 +1232,10 @@
   &__intro {
     font-size: v.rem(16);
     color: v.$color-text-secondary;
-    margin-bottom: v.rem(32);
+    margin-bottom: v.rem(16);
 
     @include m.desktop {
-      margin-bottom: v.rem(48);
+      margin-bottom: v.rem(24);
     }
   }
 
@@ -1408,6 +1450,262 @@
     text-align: center;
     justify-content: center;
     margin-top: auto;
+  }
+}
+
+.pricing {
+  padding: v.rem(20) v.rem(16);
+  background-color: v.$color-bg;
+  scroll-margin-top: v.rem(80);
+
+  @include m.tablet {
+    padding: v.rem(30) v.rem(32);
+    scroll-margin-top: v.rem(70);
+  }
+
+  @include m.desktop {
+    padding: v.rem(30) v.rem(80);
+  }
+
+  &__container {
+    max-width: v.rem(1200);
+    margin: 0 auto;
+  }
+
+  &__title {
+    font-family: v.$font-display;
+    font-size: v.rem(28);
+    font-weight: 700;
+    color: v.$color-text-dark;
+    margin-bottom: v.rem(16);
+
+    @include m.tablet {
+      font-size: v.rem(34);
+    }
+
+    @include m.desktop {
+      font-size: v.rem(40);
+    }
+  }
+
+  &__intro {
+    font-size: v.rem(16);
+    color: v.$color-text-secondary;
+    line-height: 1.6;
+    margin-bottom: v.rem(32);
+    max-width: v.rem(600);
+
+    @include m.desktop {
+      margin-bottom: v.rem(48);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: v.rem(16);
+    margin-bottom: v.rem(32);
+
+    @include m.tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: v.rem(20);
+      margin-bottom: v.rem(40);
+    }
+
+    @include m.desktop {
+      gap: v.rem(24);
+      margin-bottom: v.rem(48);
+    }
+  }
+
+  &__card {
+    position: relative;
+    padding: v.rem(24) v.rem(20);
+    background-color: #fff;
+    border: 1px solid v.$color-border;
+    border-radius: v.rem(16);
+    display: flex;
+    flex-direction: column;
+    transition:
+      border-color 0.2s,
+      transform 0.2s;
+
+    @include m.desktop {
+      padding: v.rem(32) v.rem(28);
+
+      &:hover {
+        border-color: v.$color-primary;
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  &__number {
+    position: absolute;
+    top: v.rem(20);
+    right: v.rem(20);
+    font-family: v.$font-display;
+    font-size: v.rem(28);
+    font-weight: 700;
+    color: v.$color-border;
+    line-height: 1;
+
+    @include m.desktop {
+      font-size: v.rem(32);
+      top: v.rem(24);
+      right: v.rem(24);
+    }
+  }
+
+  &__icon {
+    width: v.rem(44);
+    height: v.rem(44);
+    border-radius: 50%;
+    background-color: rgba(195, 83, 103, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: v.rem(16);
+
+    svg {
+      width: v.rem(22);
+      height: v.rem(22);
+      color: v.$color-primary;
+    }
+  }
+
+  &__card-title {
+    font-size: v.rem(18);
+    font-weight: 600;
+    color: v.$color-text-dark;
+    margin-bottom: v.rem(10);
+    padding-right: v.rem(40);
+    line-height: 1.3;
+
+    @include m.desktop {
+      font-size: v.rem(19);
+    }
+  }
+
+  &__card-text {
+    font-size: v.rem(14);
+    color: v.$color-text-secondary;
+    line-height: 1.6;
+    margin-bottom: v.rem(20);
+
+    @include m.desktop {
+      font-size: v.rem(15);
+    }
+  }
+
+  &__inline-link {
+    display: inline-flex;
+    align-items: center;
+    gap: v.rem(8);
+    margin-top: v.rem(-8);
+    margin-bottom: v.rem(20);
+    padding: v.rem(10) v.rem(16);
+    background-color: rgba(195, 83, 103, 0.06);
+    border-radius: v.rem(10);
+    color: v.$color-primary;
+    font-size: v.rem(14);
+    font-weight: 600;
+    transition:
+      background-color 0.2s,
+      gap 0.2s;
+
+    svg {
+      flex-shrink: 0;
+      width: v.rem(16);
+      height: v.rem(16);
+    }
+
+    &:hover {
+      background-color: rgba(195, 83, 103, 0.12);
+      gap: v.rem(12);
+    }
+  }
+
+  &__inline-link-arrow {
+    transition: transform 0.2s;
+  }
+
+  &__inline-link:hover &__inline-link-arrow {
+    transform: translateX(2px);
+  }
+
+  &__list {
+    list-style: none;
+    margin: 0 0 v.rem(20);
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: v.rem(2);
+    flex-grow: 1;
+  }
+
+  &__item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: v.rem(12);
+    padding: v.rem(12) 0;
+    border-bottom: 1px solid v.$color-border;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__item-name {
+    font-size: v.rem(14);
+    color: v.$color-text-dark;
+    line-height: 1.4;
+  }
+
+  &__item-note {
+    display: block;
+    font-size: v.rem(12);
+    color: v.$color-text-secondary;
+    margin-top: v.rem(2);
+  }
+
+  &__item-price {
+    flex-shrink: 0;
+    font-size: v.rem(15);
+    font-weight: 700;
+    color: v.$color-primary;
+    white-space: nowrap;
+  }
+
+  &__payment {
+    font-size: v.rem(13);
+    color: v.$color-text-secondary;
+    line-height: 1.5;
+    padding-top: v.rem(16);
+    border-top: 1px solid v.$color-border;
+  }
+
+  &__btn {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    margin-top: auto;
+  }
+
+  &__note {
+    position: relative;
+    border-left: 3px solid v.$color-primary;
+    padding: v.rem(20) v.rem(20) v.rem(20) v.rem(24);
+    background-color: rgba(195, 83, 103, 0.06);
+    border-radius: 0 v.rem(12) v.rem(12) 0;
+    font-size: v.rem(14);
+    color: v.$color-text-dark;
+    line-height: 1.6;
+
+    strong {
+      color: v.$color-primary;
+    }
   }
 }
 
@@ -1849,7 +2147,7 @@
 
     @include m.desktop {
       grid-template-columns: 1.6fr 1fr 1fr;
-      gap: v.rem(48);
+      gap: v.rem(72);
       padding-bottom: v.rem(48);
     }
   }
@@ -1868,7 +2166,7 @@
     display: flex;
     align-items: center;
     gap: v.rem(10);
-    margin-bottom: v.rem(12);
+    margin-bottom: v.rem(18);
 
     &:hover {
       .footer__logo-icon {
@@ -1906,14 +2204,15 @@
     font-size: v.rem(13);
     color: rgba(v.$color-white, 0.6);
     line-height: 1.5;
-    margin-bottom: v.rem(24);
+    margin-bottom: v.rem(32);
     max-width: v.rem(280);
   }
 
   &__cta {
     display: flex;
     flex-direction: column;
-    gap: v.rem(10);
+    gap: v.rem(12);
+    margin-bottom: v.rem(28);
     max-width: v.rem(260);
 
     @include m.tablet {
@@ -1947,15 +2246,22 @@
   &__contact-label {
     display: block;
     font-size: v.rem(11);
-    color: rgba(v.$color-white, 0.4);
-    margin-bottom: v.rem(4);
+    color: rgba(v.$color-white, 0.5);
+    margin-bottom: v.rem(8);
   }
 
   &__contact {
-    margin-bottom: v.rem(16);
+    font-size: v.rem(14);
+    color: rgba(v.$color-white, 0.8);
+    line-height: 1.5;
+    padding-bottom: v.rem(16);
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    .footer__link + .footer__link {
+      margin-top: v.rem(8);
     }
   }
 
@@ -2003,11 +2309,12 @@
 
   &__col-title {
     font-size: v.rem(14);
-    font-weight: 600;
-    color: rgba(v.$color-white, 0.5);
+    font-weight: 700;
+    color: rgba(v.$color-cream, 0.85);
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    margin-bottom: v.rem(16);
+    margin-bottom: v.rem(18);
+    letter-spacing: 0.06em;
   }
 
   &__list {
@@ -2016,23 +2323,17 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    gap: v.rem(10);
+    gap: v.rem(16);
   }
 
   &__link {
     font-size: v.rem(14);
-    color: rgba(v.$color-white, 0.8);
+    color: rgba(v.$color-white, 0.85);
     transition: color 0.2s;
 
     &:hover {
       color: v.$color-primary;
     }
-  }
-
-  &__contact {
-    font-size: v.rem(14);
-    color: rgba(v.$color-white, 0.8);
-    line-height: 1.5;
   }
 
   &__social {
@@ -2081,42 +2382,6 @@
     }
   }
 
-  &__contact-label {
-    display: block;
-    font-size: v.rem(11);
-    color: rgba(v.$color-white, 0.4);
-    margin-bottom: v.rem(4);
-  }
-
-  &__link--telegram {
-    display: inline-flex;
-    align-items: center;
-    gap: v.rem(8);
-
-    svg {
-      flex-shrink: 0;
-      width: v.rem(15);
-      height: v.rem(15);
-      color: rgba(v.$color-white, 0.5);
-      transition: color 0.2s;
-    }
-
-    .footer__link-arrow {
-      display: inline-block;
-      transition: transform 0.2s;
-    }
-
-    &:hover {
-      svg {
-        color: v.$color-primary;
-      }
-
-      .footer__link-arrow {
-        transform: translateX(3px);
-      }
-    }
-  }
-
   &__copy {
     font-size: v.rem(13);
     color: rgba(v.$color-white, 0.5);
@@ -2155,7 +2420,7 @@
 
   &__disclaimer {
     font-size: v.rem(12);
-    color: rgba(v.$color-white, 0.35);
+    color: rgba(v.$color-white, 0.5);
     line-height: 1.5;
     margin-top: v.rem(16);
     padding-top: v.rem(16);
