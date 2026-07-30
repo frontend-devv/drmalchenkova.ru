@@ -804,20 +804,24 @@ a {
   width: 100%;
   background: none;
   border: none;
-  font-family: inherit;
-  font-size: 1rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1.125rem;
   font-weight: 600;
   color: #483832;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 1.125rem;
+  padding: 0.75rem 0;
+  margin-bottom: 0.375rem;
 }
 .about__summary::after {
   content: "+";
-  font-size: 1.25rem;
+  font-family: "Inter", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
   color: #c35367;
+  line-height: 1;
   transition: transform 0.3s ease;
 }
 .about__summary:focus {
@@ -1086,7 +1090,6 @@ a {
 }
 .services__list {
   list-style: none;
-  margin: 0 0 2rem;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -1095,15 +1098,13 @@ a {
 @media (min-width: 48em) {
   .services__list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 1rem;
-    margin-bottom: 2.5rem;
   }
 }
 @media (min-width: 80em) {
   .services__list {
     gap: 1.25rem;
-    margin-bottom: 3rem;
   }
 }
 .services__item {
@@ -1187,12 +1188,12 @@ a {
   text-align: center;
   justify-content: center;
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 @media (min-width: 48em) {
   .services__btn {
     width: auto;
     display: inline-flex;
-    margin-top: 2rem;
   }
 }
 
@@ -1358,6 +1359,20 @@ a {
 .appointment__contact-link:hover {
   color: #c35367;
 }
+.appointment__subtitle {
+  font-size: 0.875rem;
+  color: #5a5255;
+  margin-bottom: 1rem;
+}
+.appointment__group-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(195, 83, 103, 0.7);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
 .appointment__sub {
   font-size: 1rem;
   font-weight: 600;
@@ -1428,6 +1443,25 @@ a {
   text-align: center;
   justify-content: center;
   margin-top: auto;
+}
+.appointment__btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+.appointment__btn--icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+.appointment__btn--icon svg {
+  flex-shrink: 0;
+  width: 1.125rem;
+  height: 1.125rem;
 }
 
 .pricing {
@@ -1645,6 +1679,7 @@ a {
   color: #5a5255;
   line-height: 1.5;
   padding-top: 1rem;
+  margin: 0 0 1.5rem;
   border-top: 1px solid #dfdadb;
 }
 .pricing__btn {
@@ -1652,6 +1687,25 @@ a {
   text-align: center;
   justify-content: center;
   margin-top: auto;
+}
+.pricing__btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: auto;
+}
+.pricing__btn--icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  text-align: center;
+}
+.pricing__btn--icon svg {
+  flex-shrink: 0;
+  width: 1.125rem;
+  height: 1.125rem;
 }
 .pricing__note {
   position: relative;
@@ -1899,6 +1953,15 @@ a {
     font-size: 2.5rem;
   }
 }
+.contacts__group-title {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #483832;
+  margin-bottom: 0.5rem;
+}
+.contacts__group-title:first-of-type {
+  margin-top: 0;
+}
 .contacts__intro {
   font-size: 1rem;
   color: #5a5255;
@@ -1945,11 +2008,11 @@ a {
   font-size: 1.25rem;
   font-weight: 700;
   color: #483832;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.75rem;
 }
 .contacts__list {
   list-style: none;
-  margin: 0 0 1.5rem;
+  margin: 0 0 1rem;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -2179,17 +2242,11 @@ a {
   color: rgba(255, 255, 255, 0.5);
   margin-bottom: 0.5rem;
 }
-.footer__contact {
-  font-size: 0.875rem;
-  color: rgba(255, 255, 255, 0.8);
-  line-height: 1.5;
-  padding-bottom: 1rem;
-}
-.footer__contact:last-child {
-  margin-bottom: 0;
-}
-.footer__contact .footer__link + .footer__link {
-  margin-top: 0.5rem;
+.footer__sub-label {
+  font-size: 0.6875rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 1.25rem;
+  margin-bottom: 1rem;
 }
 .footer__link--icon {
   display: flex;
@@ -2232,6 +2289,44 @@ a {
   letter-spacing: 0.04em;
   margin-bottom: 1.125rem;
   letter-spacing: 0.06em;
+}
+.footer__group-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 1.25rem;
+  margin-bottom: 1rem;
+}
+.footer__group-title:first-of-type {
+  margin-top: 0;
+}
+.footer__contact {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.footer__contact:last-child {
+  margin-bottom: 0;
+}
+.footer__link--icon {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+}
+.footer__link--icon svg {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin-top: 0.125rem;
+}
+.footer__link--icon span {
+  line-height: 1.5;
 }
 .footer__list {
   list-style: none;
@@ -2382,7 +2477,6 @@ a {
 }
 .mobile-menu__link.is-active {
   color: #c35367;
-  font-weight: 600;
 }
 
 .btn--full {
