@@ -2275,45 +2275,14 @@
   }
 
   &__spec {
-    font-size: v.rem(13);
-    color: rgba(v.$color-white, 0.6);
-    line-height: 1.5;
-    margin-bottom: v.rem(32);
-    max-width: v.rem(280);
-  }
-
-  &__cta {
-    display: flex;
-    flex-direction: column;
-    gap: v.rem(12);
+    font-size: v.rem(14);
+    color: rgba(v.$color-white, 0.65);
+    line-height: 1.6;
     margin-bottom: v.rem(28);
-    max-width: v.rem(260);
+    max-width: v.rem(280);
 
-    @include m.tablet {
-      flex-direction: row;
-      max-width: none;
-    }
-
-    .footer__cta-btn {
-      width: 100%;
-      text-align: center;
-      justify-content: center;
-      font-size: v.rem(14);
-      padding: v.rem(10) v.rem(20);
-
-      @include m.tablet {
-        width: auto;
-      }
-    }
-
-    .btn--outline {
-      border-color: rgba(v.$color-white, 0.3);
-      color: v.$color-white;
-
-      &:hover {
-        background-color: v.$color-primary;
-        border-color: v.$color-primary;
-      }
+    @include m.desktop {
+      font-size: v.rem(15);
     }
   }
 
@@ -2458,8 +2427,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: v.rem(36);
-    height: v.rem(36);
+    width: v.rem(42);
+    height: v.rem(42);
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.08);
     color: rgba(v.$color-white, 0.8);
@@ -2468,8 +2437,8 @@
       color 0.2s;
 
     svg {
-      width: v.rem(16);
-      height: v.rem(16);
+      width: v.rem(19);
+      height: v.rem(19);
     }
 
     &:hover {
