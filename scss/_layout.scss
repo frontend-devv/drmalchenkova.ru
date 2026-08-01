@@ -2063,14 +2063,6 @@
     }
   }
 
-  &__info-title {
-    font-family: v.$font-display;
-    font-size: v.rem(20);
-    font-weight: 700;
-    color: v.$color-text-dark;
-    margin-bottom: v.rem(12);
-  }
-
   &__list {
     list-style: none;
     margin: 0 0 v.rem(16);
