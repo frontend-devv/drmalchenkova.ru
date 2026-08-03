@@ -2151,11 +2151,6 @@ a {
 }
 @media (min-width: 48em) {
   .footer__brand {
-    grid-column: 1/-1;
-  }
-}
-@media (min-width: 80em) {
-  .footer__brand {
     grid-column: auto;
   }
 }
