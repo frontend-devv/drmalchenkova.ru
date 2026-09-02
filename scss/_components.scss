@@ -64,16 +64,17 @@
 }
 
 .btn--full {
-  display: inline-flex;
-  justify-content: center;
-
   width: 100%;
   text-align: center;
   margin-top: v.rem(24);
 
+  svg {
+    width: v.rem(18);
+    height: v.rem(18);
+    flex-shrink: 0;
+  }
+
   @include m.tablet {
-    display: inline-flex;
-    justify-content: center;
     width: v.rem(260);
     margin-top: v.rem(16);
 

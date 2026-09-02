@@ -174,15 +174,18 @@
 
 .btn {
   &--primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: v.rem(8);
+
+    svg {
+      width: v.rem(18);
+      height: v.rem(18);
+      flex-shrink: 0;
+    }
+
     border: 1px solid transparent;
-    @include m.desktop {
-      display: inline-block;
-    }
-
-    .hero & {
-      display: inline-block;
-    }
-
     padding: v.rem(12) v.rem(28);
     background-color: v.$color-primary;
     color: v.$color-white;
@@ -459,6 +462,7 @@
 
 .btn--outline {
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   gap: v.rem(8);
   padding: v.rem(12) v.rem(28);
@@ -466,7 +470,6 @@
   color: v.$color-primary;
   border-radius: v.rem(8);
   font-size: v.rem(16);
-  text-align: center;
   transition:
     background-color 0.2s,
     color 0.2s;
@@ -1478,18 +1481,8 @@
   }
 
   &__btn--icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: v.rem(8);
     width: 100%;
     text-align: center;
-
-    svg {
-      flex-shrink: 0;
-      width: v.rem(18);
-      height: v.rem(18);
-    }
   }
 }
 
@@ -1742,18 +1735,8 @@
   }
 
   &__btn--icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: v.rem(8);
     width: 100%;
     text-align: center;
-
-    svg {
-      flex-shrink: 0;
-      width: v.rem(18);
-      height: v.rem(18);
-    }
   }
 
   &__note {

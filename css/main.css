@@ -212,17 +212,18 @@ a {
 }
 
 .btn--primary {
-  border: 1px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
-@media (min-width: 80em) {
-  .btn--primary {
-    display: inline-block;
-  }
-}
-.hero .btn--primary {
-  display: inline-block;
+.btn--primary svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  flex-shrink: 0;
 }
 .btn--primary {
+  border: 1px solid transparent;
   padding: 0.75rem 1.75rem;
   background-color: #c35367;
   color: #fff;
@@ -499,6 +500,7 @@ a {
 
 .btn--outline {
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.75rem;
@@ -506,7 +508,6 @@ a {
   color: #c35367;
   border-radius: 0.5rem;
   font-size: 1rem;
-  text-align: center;
   transition: background-color 0.2s, color 0.2s;
 }
 .btn--outline svg {
@@ -1451,17 +1452,8 @@ a {
   margin-top: auto;
 }
 .appointment__btn--icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
   width: 100%;
   text-align: center;
-}
-.appointment__btn--icon svg {
-  flex-shrink: 0;
-  width: 1.125rem;
-  height: 1.125rem;
 }
 
 .pricing {
@@ -1695,17 +1687,8 @@ a {
   margin-top: auto;
 }
 .pricing__btn--icon {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
   width: 100%;
   text-align: center;
-}
-.pricing__btn--icon svg {
-  flex-shrink: 0;
-  width: 1.125rem;
-  height: 1.125rem;
 }
 .pricing__note {
   position: relative;
@@ -2427,16 +2410,17 @@ a {
 }
 
 .btn--full {
-  display: inline-flex;
-  justify-content: center;
   width: 100%;
   text-align: center;
   margin-top: 1.5rem;
 }
+.btn--full svg {
+  width: 1.125rem;
+  height: 1.125rem;
+  flex-shrink: 0;
+}
 @media (min-width: 48em) {
   .btn--full {
-    display: inline-flex;
-    justify-content: center;
     width: 16.25rem;
     margin-top: 1rem;
   }
