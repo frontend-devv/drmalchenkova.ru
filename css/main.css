@@ -351,6 +351,36 @@ a {
        object-position: center 0%;
   }
 }
+.hero__image-cta {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 5;
+  display: flex;
+  gap: 0.625rem;
+  padding: 1rem 1rem 1.25rem;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.25) 60%, transparent);
+}
+.hero__image-cta .btn {
+  flex: 1;
+  justify-content: center;
+  white-space: nowrap;
+}
+.hero__image-cta .btn--outline {
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.12);
+}
+.hero__image-cta .btn--outline:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  color: #fff;
+}
+@media (min-width: 48em) {
+  .hero__image-cta {
+    display: none;
+  }
+}
 .hero__title {
   font-family: "Playfair Display", serif;
   font-size: 1.625rem;
@@ -472,7 +502,7 @@ a {
   color: #5a5255;
 }
 .hero__buttons {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 1rem;
 }
@@ -483,6 +513,7 @@ a {
 }
 @media (min-width: 48em) {
   .hero__buttons {
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
   }
@@ -492,6 +523,7 @@ a {
 }
 @media (min-width: 80em) {
   .hero__buttons {
+    display: flex;
     flex-direction: row;
     gap: 1rem;
     flex-wrap: wrap;
@@ -1438,6 +1470,21 @@ a {
   border-radius: 50%;
   background-color: #c35367;
 }
+.appointment__hint {
+  align-self: flex-start;
+  position: relative;
+  border-left: 3px solid #c35367;
+  font-size: 0.875rem;
+  color: #483832;
+  background-color: rgba(195, 83, 103, 0.06);
+  border-radius: 0 0.625rem 0.625rem 0;
+  padding: 0.625rem 0.875rem;
+  margin: -0.5rem 0 1.25rem;
+  line-height: 1.5;
+}
+.appointment__hint-nowrap {
+  white-space: nowrap;
+}
 .appointment__btn {
   display: inline-flex;
   width: 100%;
@@ -2352,6 +2399,14 @@ a {
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.footer .btn--sm {
+  padding: 0.625rem 1rem;
+  font-size: 0.875rem;
+}
+.footer .btn--sm svg {
+  width: 1rem;
+  height: 1rem;
 }
 
 .mobile-menu {
