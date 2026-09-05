@@ -1283,7 +1283,7 @@ a {
 }
 @media (min-width: 48em) {
   .appointment__grid {
-    grid-template-columns: 1fr 1.3fr;
+    grid-template-columns: 1.3fr 1fr;
     align-items: start;
   }
 }
@@ -1983,7 +1983,7 @@ a {
   }
 }
 .contacts__group-title {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   font-weight: 600;
   color: #483832;
   margin-bottom: 0.5rem;
@@ -2234,7 +2234,7 @@ a {
   margin-bottom: 0.5rem;
 }
 .footer__sub-label {
-  font-size: 0.6875rem;
+  font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.5);
   margin-top: 1.25rem;
   margin-bottom: 1rem;

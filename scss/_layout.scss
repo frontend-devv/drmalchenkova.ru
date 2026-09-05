@@ -1284,7 +1284,7 @@
     gap: v.rem(20);
 
     @include m.tablet {
-      grid-template-columns: 1fr 1.3fr;
+      grid-template-columns: 1.3fr 1fr;
       align-items: start;
     }
 
@@ -2047,7 +2047,7 @@
   }
 
   &__group-title {
-    font-size: v.rem(13);
+    font-size: v.rem(14);
     font-weight: 600;
     color: v.$color-text-dark;
     margin-bottom: v.rem(8);
@@ -2317,7 +2317,7 @@
   }
 
   &__sub-label {
-    font-size: v.rem(11);
+    font-size: v.rem(12);
     color: rgba(v.$color-white, 0.5);
     margin-top: v.rem(20);
     margin-bottom: v.rem(16);

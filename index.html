@@ -108,7 +108,22 @@
             <li class="nav__item"><a href="#reviews" class="nav__link">Отзывы</a></li>
             <li class="nav__item"><a href="#contacts" class="nav__link">Контакты</a></li>
           </ul>
-          <a href="https://alvesta-clinic.ru" target="_blank" class="btn btn--primary">Записаться в клинику</a>
+          <a
+            href="https://max.ru/u/f9LHodD0cOIjxZ_Z8StwyzQ2AtB2CGtoNqNaT3UVP54HyHW3d8r4sTh6Z30"
+            target="_blank"
+            class="btn btn--primary"
+          >
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                stroke="currentColor"
+                stroke-width="1.7"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            Записаться в MAX
+          </a>
         </nav>
 
         <button class="header__burger" aria-label="Открыть меню"></button>
@@ -622,9 +637,84 @@
     <section class="appointment" id="appointment">
       <div class="appointment__container">
         <h2 class="appointment__title">Как проходит приём</h2>
-        <p class="appointment__intro">Очно или онлайн — как вам удобнее</p>
+        <p class="appointment__intro">Онлайн-консультация или прием в клинике — как вам удобнее</p>
 
         <div class="appointment__grid">
+          <div class="appointment__card appointment__card--online">
+            <div class="appointment__card-header">
+              <div class="appointment__icon">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="2" y="4" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" />
+                  <path d="M8 21h8M12 18v3" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h3 class="appointment__card-title">Онлайн-консультация</h3>
+            </div>
+
+            <p class="appointment__card-text">
+              Удобно, если вы в другом городе, не хотите тратить время на дорогу или просто хотите разобраться с
+              анализами не выходя из дома. Провожу консультации в
+              <a href="https://t.me/malchenca" target="_blank">Telegram</a>,
+              <a href="https://max.ru/u/f9LHodD0cOIjxZ_Z8StwyzQ2AtB2CGtoNqNaT3UVP54HyHW3d8r4sTh6Z30" target="_blank"
+                >MAX</a
+              >
+              и на портале
+              <a href="https://docmedsib.ru/tproduct/865725322442-malchyonkova-anastasiya-olegovna" target="_blank"
+                >ДокМедСибирь</a
+              >.
+            </p>
+
+            <h4 class="appointment__sub">Как это работает</h4>
+            <ol class="appointment__steps">
+              <li>Записываетесь через Telegram, MAX или портал</li>
+              <li>Присылаете медицинские документы: выписки, анализы, ЭКГ — всё что есть</li>
+              <li>Я изучаю вашу историю, задаю уточняющие вопросы</li>
+              <li>Получаете подробный разбор своего состояния и чёткий план действий</li>
+            </ol>
+            <p class="appointment__hint">
+              💡 При записи через Telegram или MAX укажите в сообщении пометку
+              <span class="appointment__hint-nowrap">«Онлайн-консультация»</span>
+            </p>
+
+            <h4 class="appointment__sub">Что подготовить заранее</h4>
+            <ul class="appointment__checklist">
+              <li>Результаты анализов крови</li>
+              <li>Предыдущие ЭКГ и заключения врачей</li>
+              <li>Список препаратов, которые принимаете, с дозами</li>
+              <li>Дневник контроля давления и пульса за 3–7 дней</li>
+            </ul>
+
+            <div class="appointment__btn-group">
+              <div class="appointment__btn-group">
+                <a href="https://t.me/malchenca" target="_blank" class="btn btn--primary appointment__btn--icon">
+                  <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="m512 50.49-80.98 408.28s-11.32 28.31-42.47 14.72l-187.71-143.67c25.23-22.68 220.96-198.65 229.52-206.63 13.23-12.35 5.02-19.7-10.36-10.36l-289.11 183.6-111.54-37.55s-17.56-6.23-19.25-19.82c-1.7-13.59 19.82-20.95 19.82-20.95l454.71-178.38s37.37-16.42 37.37 10.76z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  Записаться в Telegram
+                </a>
+
+                <a
+                  href="https://max.ru/u/f9LHodD0cOIjxZ_Z8StwyzQ2AtB2CGtoNqNaT3UVP54HyHW3d8r4sTh6Z30"
+                  target="_blank"
+                  class="btn btn--outline appointment__btn--icon"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                      stroke="currentColor"
+                      stroke-width="1.7"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Записаться в MAX
+                </a>
+              </div>
+            </div>
+          </div>
           <div class="appointment__card">
             <div class="appointment__card-header">
               <div class="appointment__icon">
@@ -639,7 +729,7 @@
                   <circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2" />
                 </svg>
               </div>
-              <h3 class="appointment__card-title">Очный приём</h3>
+              <h3 class="appointment__card-title">Приём в клинике</h3>
             </div>
 
             <p class="appointment__card-text">Принимаю в медицинском центре «Алвеста».</p>
@@ -722,7 +812,6 @@
                 </a>
               </li>
             </ul>
-
             <a
               href="https://alvesta-clinic.ru/?ysclid=mpxs6myo0887102726"
               target="_blank"
@@ -730,81 +819,6 @@
             >
               Записаться в клинику
             </a>
-          </div>
-          <div class="appointment__card appointment__card--online">
-            <div class="appointment__card-header">
-              <div class="appointment__icon">
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <rect x="2" y="4" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" />
-                  <path d="M8 21h8M12 18v3" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-                </svg>
-              </div>
-              <h3 class="appointment__card-title">Онлайн-консультация</h3>
-            </div>
-
-            <p class="appointment__card-text">
-              Удобно, если вы в другом городе, не хотите тратить время на дорогу или просто хотите разобраться с
-              анализами не выходя из дома. Провожу консультации в
-              <a href="https://t.me/malchenca" target="_blank">Telegram</a>,
-              <a href="https://max.ru/u/f9LHodD0cOIjxZ_Z8StwyzQ2AtB2CGtoNqNaT3UVP54HyHW3d8r4sTh6Z30" target="_blank"
-                >MAX</a
-              >
-              и на портале
-              <a href="https://docmedsib.ru/tproduct/865725322442-malchyonkova-anastasiya-olegovna" target="_blank"
-                >ДокМедСибирь</a
-              >.
-            </p>
-
-            <h4 class="appointment__sub">Как это работает</h4>
-            <ol class="appointment__steps">
-              <li>Записываетесь через Telegram, MAX или портал</li>
-              <li>Присылаете медицинские документы: выписки, анализы, ЭКГ — всё что есть</li>
-              <li>Я изучаю вашу историю, задаю уточняющие вопросы</li>
-              <li>Получаете подробный разбор своего состояния и чёткий план действий</li>
-            </ol>
-            <p class="appointment__hint">
-              💡 При записи через Telegram или MAX укажите в сообщении пометку
-              <span class="appointment__hint-nowrap">«Онлайн-консультация»</span>
-            </p>
-
-            <h4 class="appointment__sub">Что подготовить заранее</h4>
-            <ul class="appointment__checklist">
-              <li>Результаты анализов крови</li>
-              <li>Предыдущие ЭКГ и заключения врачей</li>
-              <li>Список препаратов, которые принимаете, с дозами</li>
-              <li>Дневник контроля давления и пульса за 3–7 дней</li>
-            </ul>
-
-            <div class="appointment__btn-group">
-              <div class="appointment__btn-group">
-                <a href="https://t.me/malchenca" target="_blank" class="btn btn--primary appointment__btn--icon">
-                  <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="m512 50.49-80.98 408.28s-11.32 28.31-42.47 14.72l-187.71-143.67c25.23-22.68 220.96-198.65 229.52-206.63 13.23-12.35 5.02-19.7-10.36-10.36l-289.11 183.6-111.54-37.55s-17.56-6.23-19.25-19.82c-1.7-13.59 19.82-20.95 19.82-20.95l454.71-178.38s37.37-16.42 37.37 10.76z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                  Записаться в Telegram
-                </a>
-
-                <a
-                  href="https://max.ru/u/f9LHodD0cOIjxZ_Z8StwyzQ2AtB2CGtoNqNaT3UVP54HyHW3d8r4sTh6Z30"
-                  target="_blank"
-                  class="btn btn--outline appointment__btn--icon"
-                >
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
-                      stroke="currentColor"
-                      stroke-width="1.7"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  Записаться в MAX
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </div>
@@ -1030,6 +1044,87 @@
 
         <div class="contacts__panel">
           <div class="contacts__info">
+            <h4 class="contacts__group-title">Личные страницы и каналы врача</h4>
+            <ul class="contacts__list">
+              <li class="contacts__item">
+                <a href="https://t.me/malchenca" target="_blank" class="contacts__item-link">
+                  <span class="contacts__icon">
+                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m512 50.49-80.98 408.28s-11.32 28.31-42.47 14.72l-187.71-143.67c25.23-22.68 220.96-198.65 229.52-206.63 13.23-12.35 5.02-19.7-10.36-10.36l-289.11 183.6-111.54-37.55s-17.56-6.23-19.25-19.82c-1.7-13.59 19.82-20.95 19.82-20.95l454.71-178.38s37.37-16.42 37.37 10.76z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                  <span>Telegram</span>
+                </a>
+              </li>
+              <li class="contacts__item">
+                <a href="https://t.me/docmalchenca" target="_blank" class="contacts__item-link">
+                  <span class="contacts__icon">
+                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="m512 50.49-80.98 408.28s-11.32 28.31-42.47 14.72l-187.71-143.67c25.23-22.68 220.96-198.65 229.52-206.63 13.23-12.35 5.02-19.7-10.36-10.36l-289.11 183.6-111.54-37.55s-17.56-6.23-19.25-19.82c-1.7-13.59 19.82-20.95 19.82-20.95l454.71-178.38s37.37-16.42 37.37 10.76z"
+                        fill="currentColor"
+                      />
+                    </svg>
+                  </span>
+                  <span>Telegram-канал</span>
+                </a>
+              </li>
+              <li class="contacts__item">
+                <a
+                  href="https://max.ru/u/f9LHodD0cOIjxZ_Z8StwyzQ2AtB2CGtoNqNaT3UVP54HyHW3d8r4sTh6Z30"
+                  target="_blank"
+                  class="contacts__item-link"
+                >
+                  <span class="contacts__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <span>MAX</span>
+                </a>
+              </li>
+              <li class="contacts__item">
+                <a
+                  href="https://max.ru/join/7b3xptuAocwR9ff4iyki5hIhkpXQtWNyrJMM8uavwFM"
+                  target="_blank"
+                  class="contacts__item-link"
+                >
+                  <span class="contacts__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                        stroke="currentColor"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <span>MAX-канал</span>
+                </a>
+              </li>
+              <li class="contacts__item">
+                <a href="https://www.instagram.com/docmalchenca/" target="_blank" class="contacts__item-link">
+                  <span class="contacts__icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5" />
+                      <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5" />
+                      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+                    </svg>
+                  </span>
+                  <span>Instagram*</span>
+                </a>
+              </li>
+            </ul>
             <h4 class="contacts__group-title">Приём в МЦ «Алвеста»</h4>
             <ul class="contacts__list">
               <li class="contacts__item">
@@ -1114,88 +1209,6 @@
                     </svg>
                   </span>
                   <span>MAX</span>
-                </a>
-              </li>
-            </ul>
-
-            <h4 class="contacts__group-title">Личные страницы и каналы</h4>
-            <ul class="contacts__list">
-              <li class="contacts__item">
-                <a href="https://t.me/malchenca" target="_blank" class="contacts__item-link">
-                  <span class="contacts__icon">
-                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="m512 50.49-80.98 408.28s-11.32 28.31-42.47 14.72l-187.71-143.67c25.23-22.68 220.96-198.65 229.52-206.63 13.23-12.35 5.02-19.7-10.36-10.36l-289.11 183.6-111.54-37.55s-17.56-6.23-19.25-19.82c-1.7-13.59 19.82-20.95 19.82-20.95l454.71-178.38s37.37-16.42 37.37 10.76z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </span>
-                  <span>Telegram</span>
-                </a>
-              </li>
-              <li class="contacts__item">
-                <a href="https://t.me/docmalchenca" target="_blank" class="contacts__item-link">
-                  <span class="contacts__icon">
-                    <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="m512 50.49-80.98 408.28s-11.32 28.31-42.47 14.72l-187.71-143.67c25.23-22.68 220.96-198.65 229.52-206.63 13.23-12.35 5.02-19.7-10.36-10.36l-289.11 183.6-111.54-37.55s-17.56-6.23-19.25-19.82c-1.7-13.59 19.82-20.95 19.82-20.95l454.71-178.38s37.37-16.42 37.37 10.76z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                  </span>
-                  <span>Telegram-канал</span>
-                </a>
-              </li>
-              <li class="contacts__item">
-                <a
-                  href="https://max.ru/u/f9LHodD0cOIjxZ_Z8StwyzQ2AtB2CGtoNqNaT3UVP54HyHW3d8r4sTh6Z30"
-                  target="_blank"
-                  class="contacts__item-link"
-                >
-                  <span class="contacts__icon">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </span>
-                  <span>MAX</span>
-                </a>
-              </li>
-              <li class="contacts__item">
-                <a
-                  href="https://max.ru/join/7b3xptuAocwR9ff4iyki5hIhkpXQtWNyrJMM8uavwFM"
-                  target="_blank"
-                  class="contacts__item-link"
-                >
-                  <span class="contacts__icon">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path
-                        d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                      />
-                    </svg>
-                  </span>
-                  <span>MAX-канал</span>
-                </a>
-              </li>
-              <li class="contacts__item">
-                <a href="https://www.instagram.com/docmalchenca/" target="_blank" class="contacts__item-link">
-                  <span class="contacts__icon">
-                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5" />
-                      <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.5" />
-                      <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
-                    </svg>
-                  </span>
-                  <span>Instagram*</span>
                 </a>
               </li>
             </ul>
@@ -1310,87 +1323,6 @@
           </div>
           <div class="footer__col">
             <h3 class="footer__col-title">Связаться со мной</h3>
-
-            <h4 class="footer__group-title">МЦ «Алвеста»</h4>
-            <ul class="footer__list">
-              <li class="footer__contact">
-                <span class="footer__link footer__link--icon">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                    />
-                    <circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5" />
-                  </svg>
-                  <span>г. Барнаул, Павловский тракт, 305Г</span>
-                </span>
-              </li>
-
-              <li class="footer__contact">
-                <a href="tel:+73852591144" class="footer__link footer__link--icon">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1 .36 1.98.68 2.92a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.16-1.16a2 2 0 0 1 2.11-.45c.94.32 1.92.55 2.92.68A2 2 0 0 1 22 16.92z"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span>+7 (3852) 59-11-44</span>
-                </a>
-              </li>
-
-              <li class="footer__contact">
-                <a href="tel:+79293959116" class="footer__link footer__link--icon">
-                  <svg viewBox="-106 0 469 469.333333" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
-                    <path
-                      d="m206.246094 0h-156.160156c-27.558594.03125-49.890626 22.363281-49.917969 49.921875v369.492187c.027343 27.558594 22.359375 49.890626 49.917969 49.917969h156.160156c27.558594-.027343 49.890625-22.359375 49.921875-49.917969v-369.492187c-.03125-27.558594-22.363281-49.890625-49.921875-49.921875zm28.585937 419.414062c-.015625 15.78125-12.804687 28.570313-28.585937 28.585938h-156.160156c-15.78125-.015625-28.570313-12.804688-28.585938-28.585938v-369.492187c.015625-15.785156 12.804688-28.574219 28.585938-28.589844h156.160156c15.78125.015625 28.570312 12.804688 28.585937 28.589844zm0 0"
-                    />
-                    <path
-                      d="m160.167969 42.667969h-64c-5.890625 0-10.667969 4.773437-10.667969 10.664062s4.777344 10.667969 10.667969 10.667969h64c5.890625 0 10.664062-4.777344 10.664062-10.667969s-4.773437-10.664062-10.664062-10.664062zm0 0"
-                    />
-                    <path
-                      d="m149.5 405.332031c0 11.785157-9.550781 21.335938-21.332031 21.335938-11.785157 0-21.335938-9.550781-21.335938-21.335938 0-11.78125 9.550781-21.332031 21.335938-21.332031 11.78125 0 21.332031 9.550781 21.332031 21.332031zm0 0"
-                    />
-                  </svg>
-                  <span>+7 (929) 395-91-16</span>
-                </a>
-              </li>
-
-              <li class="footer__contact">
-                <a href="https://t.me/AlvestaMedical" target="_blank" class="footer__link footer__link--icon">
-                  <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="m512 50.49-80.98 408.28s-11.32 28.31-42.47 14.72l-187.71-143.67c25.23-22.68 220.96-198.65 229.52-206.63 13.23-12.35 5.02-19.7-10.36-10.36l-289.11 183.6-111.54-37.55s-17.56-6.23-19.25-19.82c-1.7-13.59 19.82-20.95 19.82-20.95l454.71-178.38s37.37-16.42 37.37 10.76z"
-                      fill="currentColor"
-                    />
-                  </svg>
-                  <span>Telegram</span>
-                </a>
-              </li>
-
-              <li class="footer__contact">
-                <a
-                  href="https://max.ru/u/f9LHodD0cOLZl8kzpYbmVBwUfaYiS7tutPoytAqqUtoMXqB3QV_RJS-LvR8"
-                  target="_blank"
-                  class="footer__link footer__link--icon"
-                >
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </svg>
-                  <span>MAX</span>
-                </a>
-              </li>
-            </ul>
-
             <h4 class="footer__group-title">Анастасия Олеговна Мальчёнкова</h4>
             <ul class="footer__list">
               <li class="footer__contact">
@@ -1470,6 +1402,85 @@
                     <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
                   </svg>
                   <span>Instagram*</span>
+                </a>
+              </li>
+            </ul>
+            <h4 class="footer__group-title">МЦ «Алвеста»</h4>
+            <ul class="footer__list">
+              <li class="footer__contact">
+                <span class="footer__link footer__link--icon">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                    />
+                    <circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5" />
+                  </svg>
+                  <span>г. Барнаул, Павловский тракт, 305Г</span>
+                </span>
+              </li>
+
+              <li class="footer__contact">
+                <a href="tel:+73852591144" class="footer__link footer__link--icon">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13 1 .36 1.98.68 2.92a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.16-1.16a2 2 0 0 1 2.11-.45c.94.32 1.92.55 2.92.68A2 2 0 0 1 22 16.92z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span>+7 (3852) 59-11-44</span>
+                </a>
+              </li>
+
+              <li class="footer__contact">
+                <a href="tel:+79293959116" class="footer__link footer__link--icon">
+                  <svg viewBox="-106 0 469 469.333333" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path
+                      d="m206.246094 0h-156.160156c-27.558594.03125-49.890626 22.363281-49.917969 49.921875v369.492187c.027343 27.558594 22.359375 49.890626 49.917969 49.917969h156.160156c27.558594-.027343 49.890625-22.359375 49.921875-49.917969v-369.492187c-.03125-27.558594-22.363281-49.890625-49.921875-49.921875zm28.585937 419.414062c-.015625 15.78125-12.804687 28.570313-28.585937 28.585938h-156.160156c-15.78125-.015625-28.570313-12.804688-28.585938-28.585938v-369.492187c.015625-15.785156 12.804688-28.574219 28.585938-28.589844h156.160156c15.78125.015625 28.570312 12.804688 28.585937 28.589844zm0 0"
+                    />
+                    <path
+                      d="m160.167969 42.667969h-64c-5.890625 0-10.667969 4.773437-10.667969 10.664062s4.777344 10.667969 10.667969 10.667969h64c5.890625 0 10.664062-4.777344 10.664062-10.667969s-4.773437-10.664062-10.664062-10.664062zm0 0"
+                    />
+                    <path
+                      d="m149.5 405.332031c0 11.785157-9.550781 21.335938-21.332031 21.335938-11.785157 0-21.335938-9.550781-21.335938-21.335938 0-11.78125 9.550781-21.332031 21.335938-21.332031 11.78125 0 21.332031 9.550781 21.332031 21.332031zm0 0"
+                    />
+                  </svg>
+                  <span>+7 (929) 395-91-16</span>
+                </a>
+              </li>
+
+              <li class="footer__contact">
+                <a href="https://t.me/AlvestaMedical" target="_blank" class="footer__link footer__link--icon">
+                  <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="m512 50.49-80.98 408.28s-11.32 28.31-42.47 14.72l-187.71-143.67c25.23-22.68 220.96-198.65 229.52-206.63 13.23-12.35 5.02-19.7-10.36-10.36l-289.11 183.6-111.54-37.55s-17.56-6.23-19.25-19.82c-1.7-13.59 19.82-20.95 19.82-20.95l454.71-178.38s37.37-16.42 37.37 10.76z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                  <span>Telegram</span>
+                </a>
+              </li>
+
+              <li class="footer__contact">
+                <a
+                  href="https://max.ru/u/f9LHodD0cOLZl8kzpYbmVBwUfaYiS7tutPoytAqqUtoMXqB3QV_RJS-LvR8"
+                  target="_blank"
+                  class="footer__link footer__link--icon"
+                >
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  <span>MAX</span>
                 </a>
               </li>
             </ul>
