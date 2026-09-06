@@ -471,7 +471,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const vh = window.visualViewport ? window.visualViewport.height : window.innerHeight
-    const value = `${Math.round(vh * 0.65)}px`
+    const value = `${Math.round(vh * 0.7)}px`
     heroImage.style.height = value
     heroImage.style.maxHeight = value
   }
