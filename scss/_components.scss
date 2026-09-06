@@ -6,7 +6,7 @@
   top: v.rem(80);
   left: 0;
   right: 0;
-  bottom: 0;
+  height: calc(100dvh - #{v.rem(80)});
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 
@@ -19,7 +19,6 @@
   visibility: hidden;
   transform: translateY(-16px) scale(0.98);
 
-  // Закрытие (по умолчанию): плавно и чуть быстрее
   transition:
     opacity 0.2s ease-in,
     transform 0.25s ease-in,
@@ -30,7 +29,6 @@
     visibility: visible;
     transform: translateY(0) scale(1);
 
-    // Открытие: с лёгким "выбросом", ощущается живее
     transition:
       opacity 0.25s ease-out,
       transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
@@ -65,7 +63,6 @@
       transform 0.15s ease-in;
   }
 
-  // Открытие: пункты появляются сверху вниз
   &.is-open &__list li {
     opacity: 1;
     transform: translateY(0);

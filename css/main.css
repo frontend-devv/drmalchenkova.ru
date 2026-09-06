@@ -2504,7 +2504,7 @@ a {
   top: 5rem;
   left: 0;
   right: 0;
-  bottom: 0;
+  height: calc(100dvh - 5rem);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
   background-color: #fcfbfb;
