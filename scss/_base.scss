@@ -33,6 +33,12 @@ body {
   min-height: 100vh;
 }
 
+body.menu-open {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
 h1,
 h2,
 h3,
