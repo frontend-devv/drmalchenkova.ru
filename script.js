@@ -462,7 +462,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const vh = window.visualViewport ? window.visualViewport.height : window.innerHeight
-    const value = `${Math.round(vh * 0.6)}px`
+    const value = `${Math.round(vh * 0.65)}px`
     heroImage.style.height = value
     heroImage.style.maxHeight = value
   }
@@ -483,12 +483,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function getScrollThreshold() {
+    const EARLY_OFFSET = 120
+
     if (heroImageCta) {
-      return heroImageCta.getBoundingClientRect().top + window.scrollY
+      return heroImageCta.getBoundingClientRect().top + window.scrollY - EARLY_OFFSET
     }
 
     if (heroImage) {
-      return heroImage.offsetTop + heroImage.offsetHeight
+      return heroImage.offsetTop + heroImage.offsetHeight - EARLY_OFFSET
     }
 
     return heroSection ? heroSection.offsetHeight : 20
