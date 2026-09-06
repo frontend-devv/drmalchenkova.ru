@@ -400,6 +400,14 @@ document.addEventListener('DOMContentLoaded', () => {
     })
   }
 
+  function setMobileMenuHeight() {
+    if (!header || !mobileMenu) return
+
+    const vh = window.visualViewport ? window.visualViewport.height : window.innerHeight
+    const value = `${Math.round(vh - header.offsetHeight)}px`
+    mobileMenu.style.height = value
+  }
+
   function openMobileMenu() {
     suppressHeaderScroll = true
     header?.classList.add('menu-open')
@@ -409,6 +417,7 @@ document.addEventListener('DOMContentLoaded', () => {
     burger?.setAttribute('aria-label', 'Закрыть меню')
     lockBodyScroll()
     syncMobileMenuPosition()
+    setMobileMenuHeight()
 
     releaseScrollSuppressionSoon()
   }
