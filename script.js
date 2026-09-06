@@ -98,6 +98,25 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroImage = document.querySelector('.hero__image--full')
   const heroImageCta = document.querySelector('.hero__image-cta')
 
+  let heroImageWidth = window.innerWidth
+
+  function setHeroImageHeight() {
+    if (!heroImage) return
+
+    if (window.innerWidth >= MOBILE_BREAKPOINT) {
+      heroImage.style.removeProperty('height')
+      heroImage.style.removeProperty('max-height')
+      return
+    }
+
+    const vh = window.visualViewport ? window.visualViewport.height : window.innerHeight
+    const value = `${Math.round(vh * 0.6)}px`
+    heroImage.style.height = value
+    heroImage.style.maxHeight = value
+  }
+
+  setHeroImageHeight()
+
   function syncMobileMenuPosition() {
     if (header && mobileMenu) {
       mobileMenu.style.top = `${header.offsetHeight}px`
@@ -148,7 +167,17 @@ document.addEventListener('DOMContentLoaded', () => {
     if (window.innerWidth >= MOBILE_BREAKPOINT && mobileMenu?.classList.contains('is-open')) {
       closeMobileMenu()
     }
+
+    if (window.innerWidth !== heroImageWidth) {
+      heroImageWidth = window.innerWidth
+      setHeroImageHeight()
+    }
   })
+
+  window.addEventListener('orientationchange', () => {
+    setTimeout(setHeroImageHeight, 150)
+  })
+
   window.addEventListener('scroll', onWindowScroll, { passive: true })
 
   header?.addEventListener('transitionend', syncMobileMenuPosition)
