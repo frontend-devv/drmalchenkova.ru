@@ -5,8 +5,11 @@
   position: fixed;
   top: v.rem(80);
   left: 0;
-  width: 100%;
-  min-height: calc(100vh - v.rem(80));
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
   background-color: v.$color-bg;
   border-bottom: 1px solid v.$color-border;
   padding: v.rem(24) v.rem(22);
@@ -14,16 +17,24 @@
 
   opacity: 0;
   visibility: hidden;
-  transform: translateY(-10px);
+  transform: translateY(-16px) scale(0.98);
+
+  // Закрытие (по умолчанию): плавно и чуть быстрее
   transition:
-    opacity 0.3s,
-    transform 0.3s,
-    visibility 0.3s;
+    opacity 0.2s ease-in,
+    transform 0.25s ease-in,
+    visibility 0.25s;
 
   &.is-open {
     opacity: 1;
     visibility: visible;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
+
+    // Открытие: с лёгким "выбросом", ощущается живее
+    transition:
+      opacity 0.25s ease-out,
+      transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0.35s;
   }
 
   @include m.tablet {
@@ -43,6 +54,38 @@
 
     @include m.tablet {
       width: v.rem(260);
+    }
+  }
+
+  &__list li {
+    opacity: 0;
+    transform: translateY(8px);
+    transition:
+      opacity 0.15s ease-in,
+      transform 0.15s ease-in;
+  }
+
+  // Открытие: пункты появляются сверху вниз
+  &.is-open &__list li {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity 0.25s ease-out,
+      transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+
+    @for $i from 1 through 10 {
+      &:nth-child(#{$i}) {
+        transition-delay: 0.05s * $i;
+      }
+    }
+  }
+
+  // Закрытие: пункты исчезают снизу вверх (реверс)
+  &:not(.is-open) &__list li {
+    @for $i from 1 through 10 {
+      &:nth-last-child(#{$i}) {
+        transition-delay: 0.03s * $i;
+      }
     }
   }
 

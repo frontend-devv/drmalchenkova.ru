@@ -1,66 +1,157 @@
 document.addEventListener('DOMContentLoaded', () => {
   const burger = document.querySelector('.header__burger')
   const mobileMenu = document.querySelector('.mobile-menu')
+  const header = document.querySelector('.header')
+
+  const MOBILE_BREAKPOINT = 768
+
+  let scrollPosition = 0
+  let suppressHeaderScroll = false
+
+  function lockBodyScroll() {
+    scrollPosition = window.scrollY
+    document.body.style.position = 'fixed'
+    document.body.style.top = `-${scrollPosition}px`
+    document.body.style.width = '100%'
+  }
+
+  function unlockBodyScroll() {
+    const prevScrollBehavior = document.documentElement.style.scrollBehavior
+    document.documentElement.style.scrollBehavior = 'auto'
+
+    document.body.style.position = ''
+    document.body.style.top = ''
+    document.body.style.width = ''
+    window.scrollTo(0, scrollPosition)
+
+    document.documentElement.style.scrollBehavior = prevScrollBehavior
+  }
+
+  function withoutTransition(el, callback) {
+    if (!el) {
+      callback()
+      return
+    }
+    el.classList.add('no-transition')
+    callback()
+    void el.offsetHeight
+    el.classList.remove('no-transition')
+  }
+
+  function releaseScrollSuppressionSoon() {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        suppressHeaderScroll = false
+      })
+    })
+  }
+
+  function openMobileMenu() {
+    suppressHeaderScroll = true
+    header?.classList.add('menu-open')
+    mobileMenu?.classList.add('is-open')
+    burger?.classList.add('is-active')
+    burger?.setAttribute('aria-expanded', 'true')
+    burger?.setAttribute('aria-label', 'Закрыть меню')
+    lockBodyScroll()
+    syncMobileMenuPosition()
+
+    releaseScrollSuppressionSoon()
+  }
+
+  function closeMobileMenu() {
+    suppressHeaderScroll = true
+
+    mobileMenu?.classList.remove('is-open')
+    burger?.classList.remove('is-active')
+    burger?.setAttribute('aria-expanded', 'false')
+    burger?.setAttribute('aria-label', 'Открыть меню')
+    unlockBodyScroll()
+
+    withoutTransition(header, () => {
+      header?.classList.remove('menu-open')
+      handleHeaderScroll()
+    })
+
+    releaseScrollSuppressionSoon()
+  }
 
   if (burger && mobileMenu) {
     burger.addEventListener('click', () => {
-      mobileMenu.classList.toggle('is-open')
-      burger.classList.toggle('is-active')
+      const isOpening = !mobileMenu.classList.contains('is-open')
+
+      if (isOpening) {
+        openMobileMenu()
+      } else {
+        closeMobileMenu()
+      }
     })
   }
 
   document.querySelectorAll('.mobile-menu__link').forEach((link) => {
     link.addEventListener('click', () => {
-      mobileMenu?.classList.remove('is-open')
-      burger?.classList.remove('is-active')
+      closeMobileMenu()
     })
   })
 
+  const heroSection = document.querySelector('.hero')
+  const heroImage = document.querySelector('.hero__image--full')
+  const heroImageCta = document.querySelector('.hero__image-cta')
+
   function syncMobileMenuPosition() {
-    const header = document.querySelector('.header')
     if (header && mobileMenu) {
       mobileMenu.style.top = `${header.offsetHeight}px`
     }
   }
 
+  function getScrollThreshold() {
+    if (heroImageCta) {
+      return heroImageCta.getBoundingClientRect().top + window.scrollY
+    }
+
+    if (heroImage) {
+      return heroImage.offsetTop + heroImage.offsetHeight
+    }
+
+    return heroSection ? heroSection.offsetHeight : 20
+  }
+
+  function handleHeaderScroll() {
+    const isMobile = window.innerWidth < MOBILE_BREAKPOINT
+
+    if (isMobile) {
+      const threshold = getScrollThreshold()
+
+      if (window.scrollY > threshold) {
+        header.classList.add('is-scrolled')
+      } else {
+        header.classList.remove('is-scrolled')
+      }
+    } else {
+      header.classList.remove('is-scrolled')
+    }
+
+    syncMobileMenuPosition()
+  }
+
+  function onWindowScroll() {
+    if (suppressHeaderScroll) return
+    handleHeaderScroll()
+  }
+
   syncMobileMenuPosition()
-  window.addEventListener('resize', syncMobileMenuPosition)
+  handleHeaderScroll()
 
-  function setHeroImageHeight() {
-    const heroImage = document.querySelector('.hero__image')
-    if (!heroImage) return
-
-    if (window.innerWidth >= 768) {
-      heroImage.style.maxHeight = ''
-      return
-    }
-
-    const viewportHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight
-    heroImage.style.maxHeight = `${viewportHeight * 0.6}px`
-  }
-
-  setHeroImageHeight()
-
-  let lastWidth = window.innerWidth
-
-  function handlePossibleResize() {
-    if (window.innerWidth !== lastWidth) {
-      lastWidth = window.innerWidth
-      setHeroImageHeight()
-    }
-  }
-
-  let heroResizeTimeout
   window.addEventListener('resize', () => {
-    clearTimeout(heroResizeTimeout)
-    heroResizeTimeout = setTimeout(handlePossibleResize, 150)
-  })
+    handleHeaderScroll()
 
-  let orientationTimeout
-  window.addEventListener('orientationchange', () => {
-    clearTimeout(orientationTimeout)
-    orientationTimeout = setTimeout(setHeroImageHeight, 200)
+    if (window.innerWidth >= MOBILE_BREAKPOINT && mobileMenu?.classList.contains('is-open')) {
+      closeMobileMenu()
+    }
   })
+  window.addEventListener('scroll', onWindowScroll, { passive: true })
+
+  header?.addEventListener('transitionend', syncMobileMenuPosition)
 
   const track = document.querySelector('.about__carousel-track')
   const dots = document.querySelectorAll('.about__dot')

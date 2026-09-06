@@ -10,12 +10,27 @@
   border-bottom: 1px solid v.$color-border;
   z-index: 100;
 
+  transition:
+    box-shadow 0.3s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease;
+
+  &.is-scrolled {
+    box-shadow: 0 v.rem(4) v.rem(16) rgba(v.$color-black, 0.08);
+    background-color: rgba(v.$color-bg, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
   &__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: v.rem(12) v.rem(16);
     min-height: v.rem(80);
+    transition:
+      padding 0.3s ease,
+      min-height 0.3s ease;
 
     @include m.tablet {
       padding: v.rem(14) v.rem(32);
@@ -88,6 +103,7 @@
   &__logo-spec {
     font-size: v.rem(13);
     color: v.$color-text-secondary;
+    transition: v.$transition-color;
   }
 
   &__burger {
@@ -115,7 +131,8 @@
       left: 0;
       transition:
         transform 0.3s,
-        box-shadow 0.3s;
+        box-shadow 0.3s,
+        background-color 0.3s;
     }
 
     &::before {
@@ -137,6 +154,31 @@
       }
     }
   }
+}
+
+.header.is-scrolled .header__container {
+  min-height: v.rem(60);
+  padding-top: v.rem(8);
+  padding-bottom: v.rem(8);
+
+  @include m.tablet {
+    padding-top: v.rem(10);
+    padding-bottom: v.rem(10);
+  }
+}
+
+.header.is-scrolled .header__logo-icon {
+  width: v.rem(38);
+  height: v.rem(38);
+
+  @include m.desktop {
+    width: v.rem(46);
+    height: v.rem(46);
+  }
+}
+
+.header.is-scrolled .header__logo-spec {
+  display: none;
 }
 
 .nav {
@@ -244,11 +286,13 @@
   &__image {
     order: 1;
     width: 100%;
+    height: 60vh;
+    height: 60svh;
     max-height: 60vh;
     max-height: 60svh;
     overflow: hidden;
     position: relative;
-    border-radius: 0 0 v.rem(24) v.rem(24);
+    border-radius: 0 0 v.rem(20) v.rem(20);
 
     @include m.tablet {
       order: 2;
@@ -257,15 +301,9 @@
       top: v.rem(80);
       bottom: 0;
       width: 45%;
+      height: auto;
       max-height: none;
       border-radius: 0;
-    }
-
-    img {
-      @include m.tablet {
-        height: 100vh;
-        object-position: center 0%;
-      }
     }
 
     &::after {
@@ -290,6 +328,7 @@
       top: v.rem(80);
       bottom: 0;
       width: 50%;
+      height: auto;
       max-height: none;
       overflow: hidden;
       border-radius: 0;
@@ -301,9 +340,13 @@
       object-fit: cover;
       object-position: center 20%;
 
+      @include m.tablet {
+        height: 100vh;
+      }
+
       @include m.desktop {
         height: 100vh;
-        object-position: center 0%;
+        object-position: center 60%;
       }
     }
   }
@@ -397,6 +440,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       gap: v.rem(20);
+      margin: 0 0 v.rem(32);
     }
 
     @include m.desktop {
@@ -493,7 +537,6 @@
     }
   }
 }
-
 .btn--outline {
   display: inline-flex;
   justify-content: center;
@@ -2520,5 +2563,72 @@
       width: v.rem(16);
       height: v.rem(16);
     }
+  }
+}
+
+.header.no-transition {
+  transition: none !important;
+
+  .header__container,
+  .header__logo-icon {
+    transition: none !important;
+  }
+}
+
+@media (max-width: #{v.$tablet - 0.01em}) {
+  .header {
+    background-color: transparent;
+    border-bottom-color: transparent;
+    box-shadow: none;
+  }
+
+  .header:not(.is-scrolled):not(.menu-open) {
+    .header__logo-name,
+    .header__logo-title {
+      color: v.$color-white;
+      text-shadow: 0 1px 6px rgba(v.$color-black, 0.5);
+    }
+
+    .header__logo-spec {
+      color: v.$color-white;
+      text-shadow: 0 1px 6px rgba(v.$color-black, 0.5);
+    }
+
+    .header__logo-icon {
+      color: v.$color-white;
+      filter: drop-shadow(0 1px 4px rgba(v.$color-black, 0.5));
+    }
+
+    .header__burger {
+      &::before,
+      &::after {
+        background-color: v.$color-white;
+      }
+
+      &::before {
+        box-shadow: 0 8px 0 v.$color-white;
+      }
+    }
+  }
+
+  .header.menu-open {
+    background-color: v.$color-bg;
+    border-bottom-color: v.$color-border;
+  }
+
+  .hero {
+    padding-top: 0;
+  }
+
+  .hero__image--full::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: v.rem(110);
+    background: linear-gradient(to bottom, rgba(v.$color-black, 0.45), transparent);
+    z-index: 4;
+    pointer-events: none;
   }
 }
