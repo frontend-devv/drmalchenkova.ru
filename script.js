@@ -82,6 +82,8 @@ document.addEventListener('DOMContentLoaded', () => {
       handleHeaderScroll()
     })
 
+    updateActiveNav()
+
     releaseScrollSuppressionSoon()
   }
 
