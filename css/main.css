@@ -219,10 +219,6 @@ a {
   }
 }
 
-.header.is-scrolled .header__logo-spec {
-  display: none;
-}
-
 .nav {
   display: none;
 }
