@@ -46,19 +46,20 @@
     align-items: center;
     gap: v.rem(10);
 
-    &:hover {
-      .header__logo-icon {
-        color: v.$color-primary;
-        transform: scale(1.08);
-      }
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        .header__logo-icon {
+          color: v.$color-primary;
+          transform: scale(1.08);
+        }
 
-      .header__logo-name,
-      .header__logo-title {
-        color: v.$color-primary;
+        .header__logo-name,
+        .header__logo-title {
+          color: v.$color-primary;
+        }
       }
     }
   }
-
   &__logo-icon {
     color: v.$color-accent;
     width: v.rem(52);
@@ -2314,9 +2315,11 @@
     gap: v.rem(10);
     margin-bottom: v.rem(18);
 
-    &:hover {
-      .footer__logo-icon {
-        transform: scale(1.08);
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        .footer__logo-icon {
+          transform: scale(1.08);
+        }
       }
     }
   }

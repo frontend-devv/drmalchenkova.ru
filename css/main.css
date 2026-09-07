@@ -107,13 +107,15 @@ a {
   align-items: center;
   gap: 0.625rem;
 }
-.header__logo:hover .header__logo-icon {
-  color: #c35367;
-  transform: scale(1.08);
-}
-.header__logo:hover .header__logo-name,
-.header__logo:hover .header__logo-title {
-  color: #c35367;
+@media (hover: hover) and (pointer: fine) {
+  .header__logo:hover .header__logo-icon {
+    color: #c35367;
+    transform: scale(1.08);
+  }
+  .header__logo:hover .header__logo-name,
+  .header__logo:hover .header__logo-title {
+    color: #c35367;
+  }
 }
 .header__logo-icon {
   color: #a83d4d;
@@ -2227,8 +2229,10 @@ a {
   gap: 0.625rem;
   margin-bottom: 1.125rem;
 }
-.footer__logo:hover .footer__logo-icon {
-  transform: scale(1.08);
+@media (hover: hover) and (pointer: fine) {
+  .footer__logo:hover .footer__logo-icon {
+    transform: scale(1.08);
+  }
 }
 .footer__logo-icon {
   width: 3.25rem;
