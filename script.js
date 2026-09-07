@@ -82,7 +82,11 @@ document.addEventListener('DOMContentLoaded', () => {
       handleHeaderScroll()
     })
 
-    updateActiveNav()
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        updateActiveNav()
+      })
+    })
 
     releaseScrollSuppressionSoon()
   }
