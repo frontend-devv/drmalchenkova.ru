@@ -336,6 +336,8 @@ document.addEventListener('DOMContentLoaded', () => {
   let headerHeight = document.querySelector('.header')?.offsetHeight || 80
 
   function updateActiveNav() {
+    if (suppressActiveNav) return
+
     const scrollPos = window.scrollY + headerHeight + 50
     let currentId = null
 
@@ -356,6 +358,12 @@ document.addEventListener('DOMContentLoaded', () => {
   let ticking = false
 
   window.addEventListener('scroll', () => {
+    if (suppressHeaderScroll) return
+
+    if (suppressActiveNav) {
+      armScrollEndCheck()
+    }
+
     if (!ticking) {
       window.requestAnimationFrame(() => {
         updateActiveNav()
@@ -363,6 +371,27 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       ticking = true
     }
+  })
+
+  let suppressActiveNav = false
+  let scrollEndCheckTimeout
+
+  function armScrollEndCheck() {
+    clearTimeout(scrollEndCheckTimeout)
+    scrollEndCheckTimeout = setTimeout(() => {
+      suppressActiveNav = false
+    }, 150)
+  }
+
+  navLinks.forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinks.forEach((l) => {
+        l.classList.toggle('is-active', l === link || l.getAttribute('href') === link.getAttribute('href'))
+      })
+
+      suppressActiveNav = true
+      armScrollEndCheck()
+    })
   })
 
   window.addEventListener('resize', () => {
