@@ -102,9 +102,16 @@
   }
 
   &__logo-spec {
-    font-size: v.rem(13);
-    color: v.$color-text-secondary;
-    transition: v.$transition-color;
+    display: inline-block;
+    width: fit-content;
+    margin-top: v.rem(4);
+    font-size: v.rem(11);
+    font-weight: 500;
+    padding: v.rem(3) v.rem(10);
+    border-radius: 999px;
+    background-color: v.$color-primary;
+    color: v.$color-white;
+    transition: background-color 0.2s;
   }
 
   &__burger {
@@ -169,27 +176,14 @@
 }
 
 .header.is-scrolled .header__logo-icon {
-  width: v.rem(38);
-  height: v.rem(38);
+  // width: v.rem(42);
+  // height: v.rem(42);
 
   @include m.desktop {
     width: v.rem(46);
     height: v.rem(46);
   }
 }
-
-// .header.is-scrolled .header__logo-spec {
-//   display: none;
-// }
-
-// .header.menu-open .header__logo-title {
-//   color: v.$color-primary;
-//   font-weight: 600;
-// }
-
-// .header.menu-open.is-scrolled .header__logo-spec {
-//   display: block;
-// }
 
 .nav {
   display: none;
@@ -2599,8 +2593,10 @@
     }
 
     .header__logo-spec {
+      background-color: rgba(v.$color-white, 0.22);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
       color: v.$color-white;
-      text-shadow: 0 1px 6px rgba(v.$color-black, 0.5);
     }
 
     .header__logo-icon {

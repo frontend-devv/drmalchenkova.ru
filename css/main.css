@@ -154,9 +154,17 @@ a {
   font-size: 0.875rem;
 }
 .header__logo-spec {
-  font-size: 0.8125rem;
-  color: #5a5255;
-  transition: color 0.2s ease;
+  display: inline-block;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin-top: 0.25rem;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  padding: 0.1875rem 0.625rem;
+  border-radius: 999px;
+  background-color: #c35367;
+  color: #fff;
+  transition: background-color 0.2s;
 }
 .header__burger {
   display: flex;
@@ -210,10 +218,6 @@ a {
   }
 }
 
-.header.is-scrolled .header__logo-icon {
-  width: 2.375rem;
-  height: 2.375rem;
-}
 @media (min-width: 80em) {
   .header.is-scrolled .header__logo-icon {
     width: 2.875rem;
@@ -2470,8 +2474,10 @@ a {
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
   }
   .header:not(.is-scrolled):not(.menu-open) .header__logo-spec {
+    background-color: rgba(255, 255, 255, 0.22);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     color: #fff;
-    text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
   }
   .header:not(.is-scrolled):not(.menu-open) .header__logo-icon {
     color: #fff;
