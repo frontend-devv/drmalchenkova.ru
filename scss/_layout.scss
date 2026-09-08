@@ -113,6 +113,17 @@
     background-color: v.$color-primary;
     color: v.$color-white;
     transition: background-color 0.2s;
+
+    @include m.tablet {
+      display: block;
+      margin-top: 0;
+      padding: 0;
+      background-color: transparent;
+      border-radius: 0;
+      color: v.$color-text-secondary;
+      font-size: v.rem(12);
+      font-weight: 400;
+    }
   }
 
   &__burger {
@@ -819,6 +830,27 @@
       @include m.desktop {
         height: v.rem(550);
       }
+    }
+  }
+
+  &__carousel-caption {
+    margin-top: v.rem(12);
+    padding: 0 v.rem(4);
+    font-size: v.rem(13);
+    color: v.$color-text-secondary;
+    line-height: 1.5;
+    text-align: center;
+
+    @include m.tablet {
+      font-size: v.rem(14);
+      padding: 0 v.rem(12);
+    }
+
+    @include m.desktop {
+      font-size: v.rem(15);
+      max-width: v.rem(500);
+      margin-left: auto;
+      margin-right: auto;
     }
   }
 

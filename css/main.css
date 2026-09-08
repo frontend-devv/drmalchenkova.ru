@@ -166,6 +166,18 @@ a {
   color: #fff;
   transition: background-color 0.2s;
 }
+@media (min-width: 48em) {
+  .header__logo-spec {
+    display: block;
+    margin-top: 0;
+    padding: 0;
+    background-color: transparent;
+    border-radius: 0;
+    color: #5a5255;
+    font-size: 0.75rem;
+    font-weight: 400;
+  }
+}
 .header__burger {
   display: flex;
   background: none;
@@ -831,6 +843,28 @@ a {
 @media (min-width: 80em) {
   .about__carousel-item img {
     height: 34.375rem;
+  }
+}
+.about__carousel-caption {
+  margin-top: 0.75rem;
+  padding: 0 0.25rem;
+  font-size: 0.8125rem;
+  color: #5a5255;
+  line-height: 1.5;
+  text-align: center;
+}
+@media (min-width: 48em) {
+  .about__carousel-caption {
+    font-size: 0.875rem;
+    padding: 0 0.75rem;
+  }
+}
+@media (min-width: 80em) {
+  .about__carousel-caption {
+    font-size: 0.9375rem;
+    max-width: 31.25rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 .about__carousel-dots {
