@@ -90,7 +90,7 @@ a {
   justify-content: space-between;
   padding: 0.75rem 1rem;
   min-height: 5rem;
-  transition: padding 0.3s ease, min-height 0.3s ease;
+  transition: min-height 0.3s, padding 0.3s ease, min-height 0.3s ease;
 }
 @media (min-width: 48em) {
   .header__container {
@@ -206,11 +206,6 @@ a {
   transform: translateY(-8px) rotate(-45deg);
 }
 
-.header.is-scrolled .header__container {
-  min-height: 3.75rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-}
 @media (min-width: 48em) {
   .header.is-scrolled .header__container {
     padding-top: 0.625rem;

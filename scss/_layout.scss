@@ -29,6 +29,7 @@
     padding: v.rem(12) v.rem(16);
     min-height: v.rem(80);
     transition:
+      min-height 0.3s,
       padding 0.3s ease,
       min-height 0.3s ease;
 
@@ -165,9 +166,9 @@
 }
 
 .header.is-scrolled .header__container {
-  min-height: v.rem(60);
-  padding-top: v.rem(8);
-  padding-bottom: v.rem(8);
+  // min-height: v.rem(60);
+  // padding-top: v.rem(8);
+  // padding-bottom: v.rem(8);
 
   @include m.tablet {
     padding-top: v.rem(10);
