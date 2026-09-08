@@ -824,8 +824,13 @@
 
     img {
       width: 100%;
+      height: v.rem(320);
       object-fit: contain;
       background-color: v.$color-bg;
+
+      @include m.tablet {
+        height: v.rem(500);
+      }
 
       @include m.desktop {
         height: v.rem(550);
