@@ -195,9 +195,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   header?.addEventListener('transitionend', syncMobileMenuPosition)
 
-  // --- Быстрая кастомная анимация горизонтального скролла для каруселей ---
-  // Заменяет нативный scrollBehavior: 'smooth' (медленный/непредсказуемый в разных браузерах)
-  // на управляемую анимацию с easing и фиксированной длительностью.
   const carouselScrollAnimations = new WeakMap()
 
   function easeOutCubic(t) {
@@ -207,7 +204,6 @@ document.addEventListener('DOMContentLoaded', () => {
   function animateScrollTo(el, targetLeft, duration = 320) {
     if (!el) return
 
-    // Отменяем предыдущую анимацию на этом элементе, если она ещё идёт
     const prevFrame = carouselScrollAnimations.get(el)
     if (prevFrame) cancelAnimationFrame(prevFrame)
 
@@ -218,6 +214,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const distance = clampedTarget - startLeft
 
     if (Math.abs(distance) < 1) return
+
+    const prevSnapType = el.style.scrollSnapType
+    el.style.scrollSnapType = 'none'
 
     const startTime = performance.now()
 
@@ -231,13 +230,13 @@ document.addEventListener('DOMContentLoaded', () => {
         carouselScrollAnimations.set(el, frameId)
       } else {
         carouselScrollAnimations.delete(el)
+        el.style.scrollSnapType = prevSnapType
       }
     }
 
     const frameId = requestAnimationFrame(step)
     carouselScrollAnimations.set(el, frameId)
   }
-
   function animateScrollBy(el, deltaLeft, duration = 320) {
     if (!el) return
     animateScrollTo(el, el.scrollLeft + deltaLeft, duration)
