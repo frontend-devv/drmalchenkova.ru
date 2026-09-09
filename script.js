@@ -201,7 +201,12 @@ document.addEventListener('DOMContentLoaded', () => {
     return 1 - Math.pow(1 - t, 3)
   }
 
-  function animateScrollTo(el, targetLeft, duration = 320) {
+  function getScrollDuration(base = 180) {
+    const isMobile = window.matchMedia('(max-width: 768px)').matches
+    return isMobile ? Math.round(base * 0.6) : base
+  }
+
+  function animateScrollTo(el, targetLeft, duration = getScrollDuration()) {
     if (!el) return
 
     const prevFrame = carouselScrollAnimations.get(el)
@@ -237,11 +242,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const frameId = requestAnimationFrame(step)
     carouselScrollAnimations.set(el, frameId)
   }
-  function animateScrollBy(el, deltaLeft, duration = 320) {
+
+  function animateScrollBy(el, deltaLeft, duration = getScrollDuration()) {
     if (!el) return
     animateScrollTo(el, el.scrollLeft + deltaLeft, duration)
   }
-
   const track = document.querySelector('.about__carousel-track')
   const dots = document.querySelectorAll('.about__dot')
   const prevBtn = document.querySelector('.about__carousel-prev')
