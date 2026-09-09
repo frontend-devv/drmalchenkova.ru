@@ -195,6 +195,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
   header?.addEventListener('transitionend', syncMobileMenuPosition)
 
+  // --- Быстрая кастомная анимация горизонтального скролла для каруселей ---
+  // Заменяет нативный scrollBehavior: 'smooth' (медленный/непредсказуемый в разных браузерах)
+  // на управляемую анимацию с easing и фиксированной длительностью.
+  const carouselScrollAnimations = new WeakMap()
+
+  function easeOutCubic(t) {
+    return 1 - Math.pow(1 - t, 3)
+  }
+
+  function animateScrollTo(el, targetLeft, duration = 320) {
+    if (!el) return
+
+    // Отменяем предыдущую анимацию на этом элементе, если она ещё идёт
+    const prevFrame = carouselScrollAnimations.get(el)
+    if (prevFrame) cancelAnimationFrame(prevFrame)
+
+    const maxScroll = el.scrollWidth - el.clientWidth
+    const clampedTarget = Math.max(0, Math.min(targetLeft, maxScroll))
+
+    const startLeft = el.scrollLeft
+    const distance = clampedTarget - startLeft
+
+    if (Math.abs(distance) < 1) return
+
+    const startTime = performance.now()
+
+    function step(now) {
+      const elapsed = now - startTime
+      const progress = Math.min(elapsed / duration, 1)
+      el.scrollLeft = startLeft + distance * easeOutCubic(progress)
+
+      if (progress < 1) {
+        const frameId = requestAnimationFrame(step)
+        carouselScrollAnimations.set(el, frameId)
+      } else {
+        carouselScrollAnimations.delete(el)
+      }
+    }
+
+    const frameId = requestAnimationFrame(step)
+    carouselScrollAnimations.set(el, frameId)
+  }
+
+  function animateScrollBy(el, deltaLeft, duration = 320) {
+    if (!el) return
+    animateScrollTo(el, el.scrollLeft + deltaLeft, duration)
+  }
+
   const track = document.querySelector('.about__carousel-track')
   const dots = document.querySelectorAll('.about__dot')
   const prevBtn = document.querySelector('.about__carousel-prev')
@@ -207,16 +255,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     nextBtn?.addEventListener('click', () => {
-      track.scrollBy({ left: getSlideStep(), behavior: 'smooth' })
+      animateScrollBy(track, getSlideStep())
     })
 
     prevBtn?.addEventListener('click', () => {
-      track.scrollBy({ left: -getSlideStep(), behavior: 'smooth' })
+      animateScrollBy(track, -getSlideStep())
     })
 
     dots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
-        track.scrollTo({ left: index * getSlideStep(), behavior: 'smooth' })
+        animateScrollTo(track, index * getSlideStep())
       })
     })
 
@@ -283,7 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
         dot.addEventListener('click', () => {
           const maxScroll = getMaxScroll()
           const target = Math.min(i * getCardStep(), maxScroll)
-          reviewsTrack.scrollTo({ left: target, behavior: 'smooth' })
+          animateScrollTo(reviewsTrack, target)
         })
 
         reviewsDotsContainer.appendChild(dot)
@@ -293,11 +341,11 @@ document.addEventListener('DOMContentLoaded', () => {
     renderDots()
 
     reviewsNext?.addEventListener('click', () => {
-      reviewsTrack.scrollBy({ left: getCardStep(), behavior: 'smooth' })
+      animateScrollBy(reviewsTrack, getCardStep())
     })
 
     reviewsPrev?.addEventListener('click', () => {
-      reviewsTrack.scrollBy({ left: -getCardStep(), behavior: 'smooth' })
+      animateScrollBy(reviewsTrack, -getCardStep())
     })
 
     let reviewsScrollTimeout
