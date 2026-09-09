@@ -824,7 +824,7 @@
 
     img {
       width: 100%;
-      height: v.rem(320);
+      // height: v.rem(320);
       object-fit: contain;
       background-color: v.$color-bg;
 
@@ -2026,6 +2026,7 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
+    scroll-behavior: auto;
     scrollbar-width: none;
     padding-bottom: v.rem(4);
 
@@ -2042,6 +2043,7 @@
     flex: 0 0 100%;
     aspect-ratio: 4 / 5;
     scroll-snap-align: start;
+    scroll-snap-stop: always;
     border-radius: v.rem(16);
     overflow: hidden;
     border: 1px solid v.$color-border;
