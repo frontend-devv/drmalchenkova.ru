@@ -1824,6 +1824,7 @@ a {
   line-height: 1.4;
 }
 .pricing__item-note {
+  font-style: italic;
   display: block;
   font-size: 0.8125rem;
   color: #5a5255;

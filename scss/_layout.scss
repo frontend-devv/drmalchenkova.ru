@@ -1877,6 +1877,7 @@
   }
 
   &__item-note {
+    font-style: italic;
     display: block;
     font-size: v.rem(13);
     color: v.$color-text-secondary;
