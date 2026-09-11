@@ -249,8 +249,17 @@
         </div>
       </div>
       <div class="hero__image hero__image--full">
-        <img src="assets/images/doctor.webp" alt="Мальчёнкова Анастасия Олеговна" />
-
+        <img
+          src="assets/images/doctor-1920.webp"
+          srcset="assets/images/doctor-1000.webp 1000w, assets/images/doctor-1920.webp 1920w"
+          sizes="(max-width: 47.99em) 100vw, (max-width: 79.99em) 45vw, 50vw"
+          alt="Мальчёнкова Анастасия Олеговна — кардиолог"
+          width="3579"
+          height="4582"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        />
         <div class="hero__image-cta">
           <a href="https://t.me/malchenca" target="_blank" class="btn btn--primary btn--sm">
             <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
@@ -792,13 +801,10 @@
 
               <li class="appointment__contact">
                 <a href="https://t.me/AlvestaMedical" target="_blank" class="appointment__contact-link">
-                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M23.1117 4.49449C23.4296 2.94472 21.9074 1.65683 20.4317 2.227L2.3425 9.21601C0.694517 9.85273 0.621087 12.1572 2.22518 12.8975L6.1645 14.7157L8.03849 21.2746C8.13583 21.6153 8.40618 21.8791 8.74917 21.968C9.09216 22.0568 9.45658 21.9576 9.70712 21.707L12.5938 18.8203L16.6375 21.8531C17.8113 22.7334 19.5019 22.0922 19.7967 20.6549L23.1117 4.49449Z"
-                      stroke="currentColor"
-                      stroke-width="1.2"
+                      d="m512 50.49-80.98 408.28s-11.32 28.31-42.47 14.72l-187.71-143.67c25.23-22.68 220.96-198.65 229.52-206.63 13.23-12.35 5.02-19.7-10.36-10.36l-289.11 183.6-111.54-37.55s-17.56-6.23-19.25-19.82c-1.7-13.59 19.82-20.95 19.82-20.95l454.71-178.38s37.37-16.42 37.37 10.76z"
+                      fill="currentColor"
                     />
                   </svg>
                   Написать в Telegram
@@ -859,36 +865,58 @@
               Telegram или MAX. Формат гибридный: текстовые и голосовые сообщения. Подробные пояснения обычно записываю
               голосом, а основные тезисы, рекомендации и план действий фиксирую текстом.
             </p>
-
             <ul class="pricing__list">
-              <li class="pricing__item">
-                <span class="pricing__item-name">Первичная консультация в текстовом формате</span>
-                <span class="pricing__item-price">2 000 ₽</span>
+              <li class="pricing__group">
+                <p class="pricing__group-title">Первичная консультация</p>
+
+                <ul class="pricing__group-items">
+                  <li class="pricing__item">
+                    <span class="pricing__item-name">Текстовый формат</span>
+                    <span class="pricing__item-price">2 000 ₽</span>
+                  </li>
+
+                  <li class="pricing__item">
+                    <span class="pricing__item-name">Видеоформат</span>
+                    <span class="pricing__item-price">3 000 ₽</span>
+                  </li>
+                </ul>
               </li>
-              <li class="pricing__item">
-                <span class="pricing__item-name">Первичная консультация в видео формате</span>
-                <span class="pricing__item-price">3 000 ₽</span>
+
+              <li class="pricing__group">
+                <p class="pricing__group-title">
+                  Повторная консультация <span class="pricing__group-note">в течение 3 месяцев</span>
+                </p>
+
+                <ul class="pricing__group-items">
+                  <li class="pricing__item">
+                    <span class="pricing__item-name">Текстовый формат</span>
+                    <span class="pricing__item-price">1 800 ₽</span>
+                  </li>
+
+                  <li class="pricing__item">
+                    <span class="pricing__item-name">Видеоформат</span>
+                    <span class="pricing__item-price">2 500 ₽</span>
+                  </li>
+                </ul>
               </li>
-              <li class="pricing__item">
-                <span class="pricing__item-name">Повторная консультация <br />в течение 3 месяцев</span>
-                <span class="pricing__item-price">1 800 ₽</span>
+
+              <li class="pricing__group">
+                <div class="pricing__group-header">
+                  <p class="pricing__group-title">Расшифровка анализов</p>
+                  <span class="pricing__item-price">1 000 ₽</span>
+                </div>
               </li>
-              <li class="pricing__item">
-                <span class="pricing__item-name">Расшифровка анализов</span>
-                <span class="pricing__item-price">1 000 ₽</span>
-              </li>
-              <li class="pricing__item">
-                <span class="pricing__item-name">
-                  Формат «Мне только спросить»
-                  <span class="pricing__item-note">Включает один развёрнутый ответ на один вопрос</span>
-                </span>
-                <span class="pricing__item-price">600 ₽</span>
+              <li class="pricing__group">
+                <div class="pricing__group-header">
+                  <div>
+                    <p class="pricing__group-title">Формат «Мне только спросить»</p>
+                    <span class="pricing__item-note">Включает один развёрнутый ответ на один вопрос</span>
+                  </div>
+                  <span class="pricing__item-price">600 ₽</span>
+                </div>
               </li>
             </ul>
 
-            <p class="pricing__payment">
-              Оплата переводом на карту Сбербанка. После оплаты вы получите чек об оказании информационной услуги.
-            </p>
             <div class="pricing__btn-group">
               <a href="https://t.me/malchenca" target="_blank" class="btn btn--primary pricing__btn--icon">
                 <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
@@ -918,7 +946,7 @@
               </a>
             </div>
           </div>
-          <div class="pricing__card">
+          <div class="pricing__card pricing__card--white">
             <span class="pricing__number">02</span>
             <div class="pricing__icon">
               <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

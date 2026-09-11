@@ -252,15 +252,11 @@ document.addEventListener('DOMContentLoaded', () => {
     animateScrollTo(el, el.scrollLeft + deltaLeft, duration, easing)
   }
 
-  // Полноширинные слайды (дипломы) едут дальше за один шаг, чем карточки
-  // отзывов — им нужна более длинная и плавная (ease-in-out) анимация,
-  // иначе переключение выглядит как рывок.
   function getFullSlideDuration(base = 420) {
     const isMobile = window.matchMedia('(max-width: 768px)').matches
     return isMobile ? Math.round(base * 0.75) : base
   }
 
-  // --- Карусель "О враче" (about) ---
   const track = document.querySelector('.about__carousel-track')
   const dots = document.querySelectorAll('.about__dot')
   const prevBtn = document.querySelector('.about__carousel-prev')
@@ -286,9 +282,6 @@ document.addEventListener('DOMContentLoaded', () => {
       })
     })
 
-    // IntersectionObserver вместо debounce на scroll: точка переключается
-    // сразу, как только карточка становится видимой, не дожидаясь
-    // остановки инерционного скролла на мобильном.
     let aboutCardObserver
 
     function initAboutCardObserver() {
@@ -336,7 +329,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   })
 
-  // --- Карусель отзывов/дипломов (reviews) ---
   const reviewsTrack = document.querySelector('.reviews__track')
   const reviewsDotsContainer = document.querySelector('.reviews__dots')
   const reviewsPrev = document.querySelector('.reviews__prev')
@@ -388,9 +380,6 @@ document.addEventListener('DOMContentLoaded', () => {
       initReviewsCardObserver()
     }
 
-    // IntersectionObserver вместо debounce на scroll: точка переключается
-    // сразу, как только карточка становится видимой, не дожидаясь
-    // остановки инерционного скролла на мобильном.
     function initReviewsCardObserver() {
       if (reviewsCardObserver) reviewsCardObserver.disconnect()
 
@@ -436,7 +425,6 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', renderDots)
   }
 
-  // --- Единая навигация по якорям + подсветка активного пункта ---
   const navLinks = document.querySelectorAll('.nav__link, .mobile-menu__link')
   const sections = document.querySelectorAll('section[id]')
   let headerHeight = document.querySelector('.header')?.offsetHeight || 80

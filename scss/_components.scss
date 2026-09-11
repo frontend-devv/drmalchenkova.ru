@@ -77,7 +77,6 @@
     }
   }
 
-  // Закрытие: пункты исчезают снизу вверх (реверс)
   &:not(.is-open) &__list li {
     @for $i from 1 through 10 {
       &:nth-last-child(#{$i}) {
