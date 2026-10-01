@@ -1818,6 +1818,32 @@
     flex-grow: 1;
   }
 
+  &__prepay {
+    display: flex;
+    align-items: flex-start;
+    gap: v.rem(10);
+    margin: 0 0 v.rem(20);
+    padding: v.rem(12) v.rem(16);
+    border-left: 3px solid v.$color-primary;
+    border-radius: 0 v.rem(12) v.rem(12) 0;
+    background-color: rgba(v.$color-primary, 0.08);
+    font-size: v.rem(14);
+    color: v.$color-text-dark;
+    line-height: 1.5;
+
+    svg {
+      flex-shrink: 0;
+      width: v.rem(18);
+      height: v.rem(18);
+      margin-top: v.rem(1);
+      color: v.$color-primary;
+    }
+
+    strong {
+      font-weight: 600;
+      color: v.$color-primary;
+    }
+  }
   &__group {
     display: flex;
     flex-direction: column;
