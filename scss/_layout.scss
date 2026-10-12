@@ -2676,6 +2676,15 @@
     }
   }
 
+  &__dev-arrow {
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+
+  &__dev-link:hover &__dev-arrow {
+    transform: translateX(3px);
+  }
+
   &__disclaimer {
     font-size: v.rem(12);
     color: rgba(v.$color-white, 0.5);
