@@ -2669,20 +2669,17 @@
   &__dev-link {
     font-size: v.rem(13);
     color: rgba(v.$color-white, 0.5);
-    transition: color 0.2s;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-color: rgba(v.$color-white, 0.3);
+    transition:
+      color 0.2s,
+      text-decoration-color 0.2s;
 
     &:hover {
       color: v.$color-white;
+      text-decoration-color: v.$color-white;
     }
-  }
-
-  &__dev-arrow {
-    display: inline-block;
-    transition: transform 0.2s;
-  }
-
-  &__dev-link:hover &__dev-arrow {
-    transform: translateX(3px);
   }
 
   &__disclaimer {

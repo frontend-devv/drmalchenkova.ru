@@ -2555,17 +2555,14 @@ a {
 .footer__dev-link {
   font-size: 0.8125rem;
   color: rgba(255, 255, 255, 0.5);
-  transition: color 0.2s;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+  transition: color 0.2s, text-decoration-color 0.2s;
 }
 .footer__dev-link:hover {
   color: #fff;
-}
-.footer__dev-arrow {
-  display: inline-block;
-  transition: transform 0.2s;
-}
-.footer__dev-link:hover .footer__dev-arrow {
-  transform: translateX(3px);
+  text-decoration-color: #fff;
 }
 .footer__disclaimer {
   font-size: 0.75rem;
