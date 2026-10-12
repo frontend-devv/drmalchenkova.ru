@@ -53,7 +53,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/main.css?v=2" />
+    <link rel="stylesheet" href="css/main.css?v=3" />
     <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
     <link rel="shortcut icon" href="favicon/favicon.ico" />
@@ -103,7 +103,7 @@
             <li class="nav__item"><a href="#about" class="nav__link">О враче</a></li>
             <li class="nav__item"><a href="#symptoms" class="nav__link">С чем обращаются</a></li>
             <li class="nav__item"><a href="#services" class="nav__link">Услуги</a></li>
-            <li class="nav__item"><a href="#appointment" class="nav__link">Приём</a></li>
+            <li class="nav__item"><a href="#appointment" class="nav__link">Запись</a></li>
             <li class="nav__item"><a href="#pricing" class="nav__link">Стоимость</a></li>
             <li class="nav__item"><a href="#reviews" class="nav__link">Отзывы</a></li>
             <li class="nav__item"><a href="#contacts" class="nav__link">Контакты</a></li>
@@ -135,7 +135,7 @@
         <li><a href="#about" class="mobile-menu__link">О враче</a></li>
         <li><a href="#symptoms" class="mobile-menu__link">С чем обращаются</a></li>
         <li><a href="#services" class="mobile-menu__link">Услуги</a></li>
-        <li><a href="#appointment" class="mobile-menu__link">Приём</a></li>
+        <li><a href="#appointment" class="mobile-menu__link">Онлайн или в клинике</a></li>
         <li><a href="#pricing" class="mobile-menu__link">Стоимость</a></li>
         <li><a href="#reviews" class="mobile-menu__link">Отзывы</a></li>
         <li><a href="#contacts" class="mobile-menu__link">Контакты</a></li>
@@ -657,8 +657,8 @@
     </section>
     <section class="appointment" id="appointment">
       <div class="appointment__container">
-        <h2 class="appointment__title">Как проходит приём</h2>
-        <p class="appointment__intro">Онлайн-консультация или прием в клинике — как вам удобнее</p>
+        <h2 class="appointment__title">Онлайн или в клинике</h2>
+        <p class="appointment__intro">Выберите удобный формат — ниже рассказываю, как проходит каждый</p>
 
         <div class="appointment__grid">
           <div class="appointment__card appointment__card--online">
@@ -693,8 +693,15 @@
               <li>Получаете подробный разбор своего состояния и чёткий план действий</li>
             </ol>
             <p class="appointment__hint">
-              💡 При записи через Telegram или MAX укажите в сообщении пометку
-              <span class="appointment__hint-nowrap">«Онлайн-консультация»</span>
+              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8" />
+                <path d="M12 11v5M12 8h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+              <span
+                >При записи через Telegram или MAX укажите в сообщении пометку
+                <span class="appointment__hint-nowrap">«Онлайн-консультация»</span> и ваш часовой пояс — так я смогу
+                предложить удобные дату и время</span
+              >
             </p>
 
             <h4 class="appointment__sub">Что подготовить заранее</h4>
@@ -845,34 +852,59 @@
         <div class="pricing__grid">
           <div class="pricing__card">
             <span class="pricing__number">01</span>
-            <div class="pricing__icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-            </div>
             <h3 class="pricing__card-title">Через мессенджер</h3>
-            <p class="pricing__card-text">
-              Telegram или MAX. Формат гибридный: текстовые и голосовые сообщения. Подробные пояснения обычно записываю
-              голосом, а основные тезисы, рекомендации и план действий фиксирую текстом.
-            </p>
+            <p class="pricing__card-text">Telegram или MAX — на выбор два формата:</p>
+            <ul class="pricing__formats">
+              <li class="pricing__format">
+                <p class="pricing__format-title">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                      d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Гибридный формат
+                </p>
+                <p class="pricing__format-text">
+                  Текстовые и голосовые сообщения. Подробные пояснения обычно записываю голосом, а основные тезисы,
+                  рекомендации и план действий фиксирую текстом.
+                </p>
+              </li>
+              <li class="pricing__format">
+                <p class="pricing__format-title">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="2" y="6" width="14" height="12" rx="2" stroke="currentColor" stroke-width="2" />
+                    <path
+                      d="M16 10.5l5-3v9l-5-3"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Видеозвонок
+                </p>
+                <p class="pricing__format-text">
+                  В Яндекс Телемосте. Ссылку пришлю за 5–10 минут до начала, установка приложения не требуется. По
+                  завершении основные тезисы также пришлю текстом.
+                </p>
+              </li>
+            </ul>
             <ul class="pricing__list">
               <li class="pricing__group">
                 <p class="pricing__group-title">Первичная консультация</p>
 
                 <ul class="pricing__group-items">
                   <li class="pricing__item">
-                    <span class="pricing__item-name">Текстовый формат</span>
+                    <span class="pricing__item-name">Гибридный формат</span>
                     <span class="pricing__item-price">2 000 ₽</span>
                   </li>
 
                   <li class="pricing__item">
-                    <span class="pricing__item-name">Видеоформат</span>
+                    <span class="pricing__item-name">Видеозвонок</span>
                     <span class="pricing__item-price">3 000 ₽</span>
                   </li>
                 </ul>
@@ -885,12 +917,12 @@
 
                 <ul class="pricing__group-items">
                   <li class="pricing__item">
-                    <span class="pricing__item-name">Текстовый формат</span>
+                    <span class="pricing__item-name">Гибридный формат</span>
                     <span class="pricing__item-price">1 800 ₽</span>
                   </li>
 
                   <li class="pricing__item">
-                    <span class="pricing__item-name">Видеоформат</span>
+                    <span class="pricing__item-name">Видеозвонок</span>
                     <span class="pricing__item-price">2 500 ₽</span>
                   </li>
                 </ul>
@@ -917,7 +949,10 @@
                 <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8" />
                 <path d="M12 11v5M12 8h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
               </svg>
-              <span><strong>Предоплата 100%</strong> — консультация начинается после оплаты.</span>
+              <span
+                ><strong>Предоплата 100%</strong> переводом на карту Сбербанка. После оплаты вы получите чек об
+                оказании информационной услуги.</span
+              >
             </p>
 
             <div class="pricing__btn-group">
@@ -951,46 +986,47 @@
           </div>
           <div class="pricing__card pricing__card--white">
             <span class="pricing__number">02</span>
-            <div class="pricing__icon">
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect x="2" y="4" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2" />
-                <path d="M8 21h8M12 18v3" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
-              </svg>
-            </div>
             <h3 class="pricing__card-title">Через платформу «ДокМедСибирь»</h3>
-            <p class="pricing__card-text">Запись и оплата проходят через сайт:</p>
-
-            <a
-              href="https://docmedsib.ru/tproduct/865725322442-malchyonkova-anastasiya-olegovna"
-              target="_blank"
-              class="pricing__inline-link"
-            >
-              <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path
-                  d="M10 14a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M14 10a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"
-                  stroke="currentColor"
-                  stroke-width="1.8"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <span>Перейти на ДокМедСибирь</span>
-              <span class="pricing__inline-link-arrow">→</span>
-            </a>
-            <p class="pricing__card-text">
-              Качество, содержание и продолжительность консультации одинаковые. Разница только в площадке, на которой
-              проходит общение.
-            </p>
-            <p class="pricing__card-text">
-              Во время консультации подробно обсуждаем ваши вопросы, результаты обследований и дальнейший план действий.
-            </p>
+            <p class="pricing__card-text">Запись и оплата проходят на сайте платформы.</p>
+            <ul class="pricing__formats">
+              <li class="pricing__format">
+                <p class="pricing__format-title">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2" />
+                    <path
+                      d="M8 12.5l2.5 2.5L16 9.5"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Та же консультация
+                </p>
+                <p class="pricing__format-text">
+                  Качество, содержание и продолжительность консультации одинаковые. Разница только в площадке, на
+                  которой проходит общение.
+                </p>
+              </li>
+              <li class="pricing__format">
+                <p class="pricing__format-title">
+                  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="5" y="4" width="14" height="17" rx="2" stroke="currentColor" stroke-width="2" />
+                    <path
+                      d="M9 3h6v3H9zM9 11h6M9 15h4"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                  Что обсуждаем
+                </p>
+                <p class="pricing__format-text">
+                  Подробно разбираем ваши вопросы, результаты обследований и дальнейший план действий.
+                </p>
+              </li>
+            </ul>
             <a
               href="https://docmedsib.ru/tproduct/865725322442-malchyonkova-anastasiya-olegovna"
               target="_blank"
@@ -1362,7 +1398,7 @@
               <li><a href="#about" class="footer__link">О враче</a></li>
               <li><a href="#symptoms" class="footer__link">С чем обращаются</a></li>
               <li><a href="#services" class="footer__link">Услуги</a></li>
-              <li><a href="#appointment" class="footer__link">Приём</a></li>
+              <li><a href="#appointment" class="footer__link">Онлайн или в клинике</a></li>
               <li><a href="#pricing" class="footer__link">Стоимость</a></li>
               <li><a href="#reviews" class="footer__link">Отзывы</a></li>
               <li><a href="#contacts" class="footer__link">Контакты</a></li>
