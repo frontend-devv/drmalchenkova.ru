@@ -53,7 +53,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="css/main.css?v=3" />
+    <link rel="stylesheet" href="css/main.css?v=4" />
     <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
     <link rel="shortcut icon" href="favicon/favicon.ico" />
@@ -95,7 +95,7 @@
           <div class="header__logo-text">
             <span class="header__logo-name">Мальчёнкова</span>
             <span class="header__logo-title">Анастасия Олеговна</span>
-            <span class="header__logo-spec">кардиолог</span>
+            <span class="header__logo-spec">Врач-кардиолог</span>
           </div>
         </a>
         <nav class="nav">
@@ -140,16 +140,46 @@
         <li><a href="#reviews" class="mobile-menu__link">Отзывы</a></li>
         <li><a href="#contacts" class="mobile-menu__link">Контакты</a></li>
       </ul>
-      <a href="https://t.me/malchenca" target="_blank" class="btn btn--primary btn--full">
-        <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+      <div class="mobile-menu__messengers">
+        <a href="https://t.me/malchenca" target="_blank" class="btn btn--primary">
+          <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="m512 50.49-80.98 408.28s-11.32 28.31-42.47 14.72l-187.71-143.67c25.23-22.68 220.96-198.65 229.52-206.63 13.23-12.35 5.02-19.7-10.36-10.36l-289.11 183.6-111.54-37.55s-17.56-6.23-19.25-19.82c-1.7-13.59 19.82-20.95 19.82-20.95l454.71-178.38s37.37-16.42 37.37 10.76z"
+              fill="currentColor"
+            />
+          </svg>
+          Telegram
+        </a>
+        <a
+          href="https://max.ru/u/f9LHodD0cOIjxZ_Z8StwyzQ2AtB2CGtoNqNaT3UVP54HyHW3d8r4sTh6Z30"
+          target="_blank"
+          class="btn btn--primary"
+        >
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+          MAX
+        </a>
+      </div>
+      <a href="https://alvesta-clinic.ru" target="_blank" class="btn btn--outline btn--full">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path
-            d="m512 50.49-80.98 408.28s-11.32 28.31-42.47 14.72l-187.71-143.67c25.23-22.68 220.96-198.65 229.52-206.63 13.23-12.35 5.02-19.7-10.36-10.36l-289.11 183.6-111.54-37.55s-17.56-6.23-19.25-19.82c-1.7-13.59 19.82-20.95 19.82-20.95l454.71-178.38s37.37-16.42 37.37 10.76z"
-            fill="currentColor"
+            d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           />
+          <circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2" />
         </svg>
-        Онлайн-консультация
+        Записаться в клинику
       </a>
-      <a href="https://alvesta-clinic.ru" target="_blank" class="btn btn--outline btn--full">Записаться в клинику</a>
     </div>
     <section class="hero" id="hero">
       <div class="hero__content">
@@ -270,7 +300,19 @@
             </svg>
             Онлайн
           </a>
-          <a href="https://alvesta-clinic.ru" target="_blank" class="btn btn--outline btn--sm">В клинику</a>
+          <a href="https://alvesta-clinic.ru" target="_blank" class="btn btn--outline btn--sm">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 21s-7-5.5-7-11a7 7 0 0 1 14 0c0 5.5-7 11-7 11z"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="2" />
+            </svg>
+            В клинику
+          </a>
         </div>
       </div>
     </section>
@@ -1392,7 +1434,7 @@
             </div>
           </div>
 
-          <div class="footer__col">
+          <div class="footer__col footer__col--nav">
             <h3 class="footer__col-title">Разделы сайта</h3>
             <ul class="footer__list">
               <li><a href="#about" class="footer__link">О враче</a></li>
@@ -1588,6 +1630,6 @@
         </p>
       </div>
     </footer>
-    <script src="script.js"></script>
+    <script src="script.js?v=2"></script>
   </body>
 </html>

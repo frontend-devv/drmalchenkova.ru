@@ -106,6 +106,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const heroSection = document.querySelector('.hero')
   const heroImage = document.querySelector('.hero__image--full')
   const heroImageCta = document.querySelector('.hero__image-cta')
+  const footer = document.querySelector('.footer')
 
   function setHeroImageHeight() {
     if (!heroImage) return
@@ -165,6 +166,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       header.classList.remove('is-scrolled')
     }
+
+    const isOverFooter = footer ? footer.getBoundingClientRect().top < header.offsetHeight : false
+    header.classList.toggle('is-over-footer', isOverFooter)
 
     syncMobileMenuPosition()
   }
